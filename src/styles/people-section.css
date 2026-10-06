@@ -1,0 +1,328 @@
+/* ==========================================================================
+   AskJuno — Our People Section (1x4 Carousel / Slider)
+   Square-box architecture, blueprint aesthetics, smooth page sliding.
+   ========================================================================== */
+
+#our-people {
+  position: relative;
+  overflow: hidden;
+}
+
+#our-people .wrap {
+  zoom: 0.9;
+}
+
+@supports not (zoom: 0.9) {
+  #our-people .wrap {
+    transform: scale(0.9);
+    transform-origin: center top;
+  }
+}
+
+.people-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.people-header-row .sec-head {
+  margin-bottom: 0;
+  max-width: 680px;
+}
+
+/* --------------------------------------------------------------------------
+   Carousel Navigation Controls (Square box buttons, Blueprint accents)
+   -------------------------------------------------------------------------- */
+.people-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--paper);
+  border: 1.5px solid var(--line-2, #DBE2EA);
+  border-radius: 0;
+  padding: 6px 10px;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="dark"] .people-controls {
+  border-color: var(--line, rgba(255, 255, 255, 0.14));
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+.people-counter {
+  font-family: var(--fm, monospace);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0 6px;
+  user-select: none;
+}
+
+.people-counter-current {
+  color: var(--bl, #365cad);
+  font-weight: 800;
+}
+
+.people-counter-sep {
+  opacity: 0.4;
+}
+
+.people-counter-total {
+  opacity: 0.7;
+}
+
+.people-nav-btns {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.people-nav-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--bg-2, #F8FAFC);
+  border: 1.5px solid var(--line-2, #CBD5E1);
+  border-radius: 0;
+  color: var(--ink);
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.people-nav-btn:hover {
+  background: var(--bl-soft, #EAF0FB);
+  border-color: var(--bl, #365cad);
+  color: var(--bl, #365cad);
+  transform: translateY(-1px);
+}
+
+.people-nav-btn:active {
+  transform: translateY(0);
+}
+
+[data-theme="dark"] .people-nav-btn {
+  background: var(--paper);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+[data-theme="dark"] .people-nav-btn:hover {
+  background: var(--bl-soft, rgba(138, 168, 238, 0.18));
+  border-color: var(--bl, #8aa8ee);
+  color: var(--bl, #8aa8ee);
+}
+
+/* --------------------------------------------------------------------------
+   Slider Window & Track (Smooth 1x4 sliding)
+   -------------------------------------------------------------------------- */
+.people-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.people-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.people-page-grid {
+  flex: 0 0 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   Person Card (Square Box, Clean Architecture)
+   -------------------------------------------------------------------------- */
+.people-page-grid .pcard {
+  border: 1.5px solid var(--line-2, #DBE2EA);
+  background: var(--paper);
+  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+  box-sizing: border-box;
+}
+
+.people-page-grid .pcard:hover {
+  border-color: var(--bl, #365cad);
+  box-shadow: 0 6px 18px -4px rgba(54, 92, 173, 0.12);
+  transform: translateY(-2px);
+}
+
+[data-theme="dark"] .people-page-grid .pcard {
+  border-color: var(--line, rgba(255, 255, 255, 0.14));
+}
+
+[data-theme="dark"] .people-page-grid .pcard:hover {
+  border-color: var(--bl, #8aa8ee);
+  box-shadow: 0 6px 18px -4px rgba(0, 0, 0, 0.5);
+}
+
+.people-page-grid .pcard figure {
+  margin: 0;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-bottom: 1.5px solid var(--line-2, #DBE2EA);
+  background: var(--bg-2, #F8FAFC);
+  border-radius: 0;
+  position: relative;
+}
+
+[data-theme="dark"] .people-page-grid .pcard figure {
+  border-bottom-color: var(--line, rgba(255, 255, 255, 0.14));
+}
+
+.people-page-grid .pcard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;
+  filter: grayscale(0.12);
+  transition: filter 0.35s, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.people-page-grid .pcard:hover img {
+  filter: none;
+  transform: scale(1.04);
+}
+
+.people-page-grid .pcard .pcard-info {
+  padding: 14px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.people-page-grid .pcard .pcard-name {
+  font: 700 17.5px var(--fd, sans-serif);
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.people-page-grid .pcard .pcard-role {
+  font: 600 12px var(--fm, monospace);
+  color: var(--bl, #365cad);
+  letter-spacing: 0.02em;
+}
+
+[data-theme="dark"] .people-page-grid .pcard .pcard-role {
+  color: var(--bl, #8aa8ee);
+}
+
+.people-page-grid .pcard .pcard-skills {
+  margin: 6px 0 0;
+  font-size: 13.5px;
+  line-height: 1.45;
+  color: var(--mu);
+}
+
+/* --------------------------------------------------------------------------
+   Pagination Tabs (Square indicators)
+   -------------------------------------------------------------------------- */
+.people-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 24px;
+}
+
+.people-page-pill {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--paper);
+  border: 1.5px solid var(--line-2, #CBD5E1);
+  border-radius: 0;
+  cursor: pointer;
+  padding: 5px 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--fm, monospace);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--mu);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.people-page-pill:hover:not(.active) {
+  border-color: var(--bl, #365cad);
+  color: var(--bl, #365cad);
+  background: var(--bl-soft, #EAF0FB);
+}
+
+.people-page-pill.active {
+  background: var(--bl-soft, #EAF0FB);
+  border-color: var(--bl, #365cad);
+  color: var(--bl, #365cad);
+  box-shadow: 2px 2px 0 var(--bl, #365cad);
+}
+
+[data-theme="dark"] .people-page-pill {
+  background: var(--paper);
+  border-color: var(--line);
+  color: var(--mu);
+}
+
+[data-theme="dark"] .people-page-pill.active {
+  background: var(--bl-soft, rgba(138, 168, 238, 0.18));
+  border-color: var(--bl, #8aa8ee);
+  color: var(--bl, #8aa8ee);
+  box-shadow: 2px 2px 0 var(--bl, #8aa8ee);
+}
+
+.people-pill-bar {
+  display: inline-block;
+  width: 14px;
+  height: 2px;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Media Queries
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .people-page-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  .people-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .people-controls {
+    align-self: flex-start;
+  }
+
+  .people-page-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

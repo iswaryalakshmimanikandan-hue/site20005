@@ -1,0 +1,887 @@
+/* ==========================================================================
+   AskJuno — Products & Platforms Redesigned Section
+   Square boxed architecture for every content element.
+   Blueprint Blue theme (--bl) with crisp borders and square geometry.
+   ========================================================================== */
+
+.prod-showcase-section {
+  padding: clamp(28px, 4vh, 44px) 0;
+  min-height: calc(100vh - 74px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-margin-top: 74px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.prod-showcase-section .wrap {
+  width: 100%;
+  max-width: var(--max, 1240px);
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Header */
+.prod-section-header {
+  margin-bottom: clamp(14px, 1.8vh, 22px);
+}
+
+.prod-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.prod-accent-dash {
+  width: 20px;
+  height: 3.5px;
+  border-radius: 0;
+  background: var(--bl, #365cad);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.prod-eyebrow-text {
+  font-family: var(--fb);
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.prod-main-heading {
+  font-family: var(--fb);
+  font-size: clamp(24px, 2.5vw, 32px);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+/* 3-Column Layout: Perfectly balanced to fit inside the screen */
+.prod-showcase-grid {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr) 290px;
+  gap: clamp(14px, 1.6vw, 20px);
+  align-items: stretch;
+}
+
+/* --------------------------------------------------------------------------
+   Column 1: Tabs Navigation Sidebar (Square Boxes)
+   -------------------------------------------------------------------------- */
+.prod-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-self: start;
+}
+
+.prod-tab-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.prod-tab-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 0;
+  border: 1.5px solid var(--line-2);
+  background: var(--paper);
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.prod-tab-btn:hover:not(.active) {
+  border-color: var(--bl, #365cad);
+  background: var(--bl-soft, #EAF0FB);
+  transform: translateX(2px);
+}
+
+.prod-tab-btn.active {
+  border: 1.5px solid var(--bl, #365cad);
+  background: var(--bl-soft, #EAF0FB);
+  box-shadow: 3px 3px 0 var(--bl, #365cad);
+}
+
+[data-theme="dark"] .prod-tab-btn.active {
+  background: var(--bl-soft, rgba(138, 168, 238, 0.16));
+  border-color: var(--bl, #8aa8ee);
+  box-shadow: 3px 3px 0 var(--bl, #8aa8ee);
+}
+
+.prod-tab-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.prod-tab-num {
+  font-family: var(--fm, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--mu);
+  margin-bottom: 1px;
+  transition: color 0.2s ease;
+}
+
+.prod-tab-btn.active .prod-tab-num {
+  color: var(--bl, #365cad);
+}
+
+[data-theme="dark"] .prod-tab-btn.active .prod-tab-num {
+  color: var(--bl, #8aa8ee);
+}
+
+.prod-tab-title {
+  font-family: var(--fb);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.prod-tab-btn.active .prod-tab-title {
+  font-weight: 800;
+}
+
+.prod-tab-sub {
+  font-family: var(--fb);
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--mu);
+  margin-top: 2px;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+  animation: prodSubIn 0.2s ease both;
+}
+
+@keyframes prodSubIn {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.prod-tab-chevron {
+  color: var(--bl, #365cad);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .prod-tab-chevron {
+  color: var(--bl, #8aa8ee);
+}
+
+/* Sidebar Arrow Nav (Square Box Buttons) */
+.prod-arrow-controls {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.prod-arrow-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  flex: 1;
+  height: 34px;
+  border-radius: 0;
+  border: 1.5px solid var(--line-2);
+  background: var(--paper);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font: inherit;
+}
+
+.prod-arrow-btn:hover {
+  border-color: var(--bl, #365cad);
+  color: var(--bl, #365cad);
+  background: var(--bl-soft, #EAF0FB);
+  box-shadow: 2px 2px 0 var(--bl, #365cad);
+}
+
+[data-theme="dark"] .prod-arrow-btn:hover {
+  background: var(--bl-soft, rgba(138, 168, 238, 0.18));
+  box-shadow: 2px 2px 0 var(--bl, #8aa8ee);
+  border-color: var(--bl, #8aa8ee);
+  color: var(--bl, #8aa8ee);
+}
+
+/* Sidebar Dots Row (Square Tiles) */
+.prod-dots-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 2px 0;
+}
+
+.prod-dot-btn {
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  height: 6px;
+  width: 6px;
+  border-radius: 0;
+  background: var(--line-2);
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prod-dot-btn:hover {
+  background: var(--mu);
+}
+
+.prod-dot-btn.active {
+  width: 20px;
+  background: var(--bl, #365cad);
+}
+
+[data-theme="dark"] .prod-dot-btn.active {
+  background: var(--bl, #8aa8ee);
+}
+
+/* --------------------------------------------------------------------------
+   Column 2: Center Details Panel (Screen-Fitted & Balanced)
+   -------------------------------------------------------------------------- */
+.prod-details-panel {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.4vw, 15px);
+  border: 1.5px solid var(--line-2);
+  background: var(--paper);
+  border-radius: 0;
+  padding: clamp(18px, 2vw, 24px);
+  box-shadow: 0 4px 18px -4px rgba(0, 0, 0, 0.04);
+  animation: prodContentFade 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@keyframes prodContentFade {
+  from {
+    opacity: 0.35;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Realigned Header Container */
+.prod-details-head {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* Square Box Category Badge */
+.prod-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 3px 9px;
+  border-radius: 0;
+  font-family: var(--fm, monospace);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--bl-soft, #EAF0FB);
+  border: 1px solid var(--bl-line, rgba(54, 92, 173, 0.35));
+  color: var(--bl, #365cad);
+}
+
+[data-theme="dark"] .prod-pill-badge {
+  background: var(--bl-soft, rgba(138, 168, 238, 0.16));
+  border-color: var(--bl-line, rgba(138, 168, 238, 0.35));
+  color: var(--bl, #8aa8ee);
+}
+
+.prod-content-title {
+  font-family: var(--fb);
+  font-size: clamp(24px, 2.4vw, 30px);
+  font-weight: 800;
+  color: var(--bl, #365cad);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+[data-theme="dark"] .prod-content-title {
+  color: var(--bl, #8aa8ee);
+}
+
+.prod-content-tagline {
+  font-family: var(--fb);
+  font-size: clamp(14px, 1.3vw, 16.5px);
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.prod-content-desc {
+  font-family: var(--fb);
+  font-size: 13.5px;
+  color: var(--tx);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 65ch;
+  opacity: 0.94;
+}
+
+/* Realigned Capabilities List in 2-Column Square Boxes */
+.prod-caps-wrap {
+  margin-top: 1px;
+}
+
+.prod-caps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.prod-cap-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--fb);
+  font-size: clamp(12px, 1vw, 13px);
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+  padding: 8px 12px;
+  border-radius: 0;
+  border: 1.5px solid var(--line-2);
+  background: var(--bg-2);
+  transition: all 0.2s ease;
+  min-height: 38px;
+  box-sizing: border-box;
+}
+
+.prod-cap-item:hover {
+  border-color: var(--bl, #365cad);
+  background: var(--bl-soft, #EAF0FB);
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .prod-cap-item:hover {
+  border-color: var(--bl, #8aa8ee);
+  background: var(--bl-soft, rgba(138, 168, 238, 0.16));
+}
+
+.prod-cap-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--bl, #365cad);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-theme="dark"] .prod-cap-icon {
+  color: var(--bl, #8aa8ee);
+}
+
+.prod-cap-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.prod-cap-text {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Realigned Impact Callout with Square Blueprint styling */
+.prod-impact-callout {
+  padding: 9px 13px;
+  border-radius: 0;
+  font-family: var(--fb);
+  font-size: 12.5px;
+  line-height: 1.45;
+  background: var(--bl-soft, #EAF0FB);
+  border: 1.5px solid var(--bl-line, rgba(54, 92, 173, 0.25));
+  border-left: 3.5px solid var(--bl, #365cad);
+  color: var(--tx);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+[data-theme="dark"] .prod-impact-callout {
+  background: var(--bl-soft, rgba(138, 168, 238, 0.12));
+  border-color: var(--bl-line, rgba(138, 168, 238, 0.28));
+  border-left-color: var(--bl, #8aa8ee);
+}
+
+.prod-impact-callout strong {
+  color: var(--bl, #365cad);
+  font-family: var(--fm, monospace);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  background: var(--paper);
+  border: 1px solid var(--bl, #365cad);
+  border-radius: 0;
+  flex-shrink: 0;
+  display: inline-block;
+  margin-top: 1px;
+}
+
+[data-theme="dark"] .prod-impact-callout strong {
+  border-color: var(--bl, #8aa8ee);
+  color: var(--bl, #8aa8ee);
+}
+
+/* Realigned Action CTA container */
+.prod-details-action {
+  margin-top: auto;
+  padding-top: 4px;
+  display: flex;
+  align-items: center;
+}
+
+/* Square Box Action CTA */
+.prod-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 10px 22px;
+  border-radius: 0;
+  border: 1.5px solid var(--bl, #365cad);
+  background: var(--bl, #365cad);
+  color: #FFFFFF !important;
+  font-family: var(--fb);
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.prod-cta-button:hover {
+  background: #2b4c91;
+  box-shadow: 3px 3px 0 var(--ink);
+  transform: translate(-1px, -1px);
+}
+
+.prod-cta-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.prod-cta-button:hover .prod-cta-arrow {
+  transform: translateX(3px);
+}
+
+[data-theme="dark"] .prod-cta-button {
+  background: var(--bl, #8aa8ee);
+  border-color: var(--bl, #8aa8ee);
+  color: #0E1220 !important;
+  box-shadow: 2px 2px 0 #FFFFFF;
+}
+
+[data-theme="dark"] .prod-cta-button:hover {
+  background: #a4beff;
+  box-shadow: 3px 3px 0 #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   Column 3: Interactive Mock Preview Card (Square Box)
+   -------------------------------------------------------------------------- */
+.prod-mock-card {
+  background: var(--paper);
+  border: 1.5px solid var(--line-2);
+  border-radius: 0;
+  padding: clamp(14px, 1.6vw, 18px);
+  box-shadow: 0 4px 18px -4px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: auto;
+  height: 100%;
+  box-sizing: border-box;
+  justify-content: space-between;
+  animation: prodContentFade 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+[data-theme="dark"] .prod-mock-card {
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.5);
+}
+
+/* Mock Header */
+.prod-mock-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+
+.prod-mock-title {
+  font-family: var(--fb);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* Square Box Mock Header Badge */
+.prod-mock-badge {
+  font-family: var(--fb);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 0;
+}
+
+.prod-mock-badge.badge-blue {
+  background: var(--bl-soft, #EAF0FB);
+  border: 1px solid var(--bl-line, rgba(54, 92, 173, 0.3));
+  color: var(--bl, #365cad);
+}
+
+[data-theme="dark"] .prod-mock-badge.badge-blue {
+  background: var(--bl-soft, rgba(138, 168, 238, 0.18));
+  border-color: var(--bl-line, rgba(138, 168, 238, 0.35));
+  color: var(--bl, #8aa8ee);
+}
+
+.prod-mock-badge.badge-green {
+  background: #ECFDF5;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #059669;
+}
+
+[data-theme="dark"] .prod-mock-badge.badge-green {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.35);
+  color: #34d399;
+}
+
+/* Mock Content Area */
+.prod-mock-body {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+/* Progress bar rows (Square Box Rows) */
+.prod-pipe-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  background: var(--bg-2);
+  border-radius: 0;
+}
+
+.prod-pipe-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--fb);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.prod-pipe-label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.prod-pipe-status {
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.prod-pipe-status.st-ok {
+  color: #10B981;
+}
+
+.prod-pipe-status.st-blue {
+  color: var(--bl, #365cad);
+}
+
+.prod-pipe-status.st-mu {
+  color: var(--mu);
+}
+
+.prod-pipe-bar {
+  height: 4px;
+  border-radius: 0;
+  background: var(--line);
+  overflow: hidden;
+  position: relative;
+}
+
+.prod-pipe-fill {
+  height: 100%;
+  border-radius: 0;
+  transition: width 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.prod-pipe-fill.bar-green {
+  background: #10B981;
+}
+
+.prod-pipe-fill.bar-blue {
+  background: var(--bl, #365cad);
+}
+
+.prod-pipe-fill.bar-muted {
+  background: #94A3B8;
+}
+
+/* Review Cards (MediGuard & FinReview) — Square Boxes */
+.prod-review-box {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 0;
+  padding: 7px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  transition: border-color 0.2s ease;
+}
+
+.prod-review-box:hover {
+  border-color: var(--line-2);
+}
+
+.prod-review-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--fb);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.prod-review-sub {
+  font-family: var(--fb);
+  font-size: 11px;
+  color: var(--mu);
+  line-height: 1.35;
+}
+
+.prod-tag-badge {
+  font-size: 10.5px;
+  font-weight: 700;
+  border-radius: 0;
+  padding: 1px 5px;
+  border: 1px solid currentColor;
+}
+
+.prod-tag-badge.tag-green {
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.prod-tag-badge.tag-warn {
+  color: #D97706;
+  background: rgba(217, 119, 6, 0.08);
+}
+
+[data-theme="dark"] .prod-tag-badge.tag-warn {
+  color: #FBBF24;
+  background: rgba(251, 191, 36, 0.12);
+}
+
+.prod-tag-badge.tag-blue {
+  color: var(--bl, #365cad);
+  background: var(--bl-soft, #EAF0FB);
+}
+
+/* Solutions We Build Chips (Custom AI) — Square Box Tags */
+.prod-solutions-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 2px 0;
+}
+
+.prod-chip-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 0;
+  font-family: var(--fb);
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--bl-soft, #EAF0FB);
+  border: 1px solid var(--bl-line, rgba(54, 92, 173, 0.3));
+  color: var(--bl, #365cad);
+  transition: transform 0.2s ease;
+}
+
+[data-theme="dark"] .prod-chip-pill {
+  background: var(--bl-soft, rgba(138, 168, 238, 0.14));
+  border-color: var(--bl-line, rgba(138, 168, 238, 0.3));
+  color: var(--bl, #8aa8ee);
+}
+
+.prod-chip-pill:hover {
+  transform: translateY(-1px);
+}
+
+.prod-chip-bullet {
+  width: 4px;
+  height: 4px;
+  border-radius: 0;
+  background: var(--bl, #365cad);
+  flex-shrink: 0;
+}
+
+/* Mock Stats Footer — 3 Square Box Metric Cells */
+.prod-mock-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  text-align: center;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.prod-stat-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 4px;
+  border: 1px solid var(--line);
+  background: var(--bg-2);
+  border-radius: 0;
+}
+
+.prod-stat-value {
+  font-family: var(--fb);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.2;
+}
+
+.prod-stat-label {
+  font-family: var(--fb);
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--mu);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+  .prod-showcase-grid {
+    grid-template-columns: 185px minmax(0, 1fr) 260px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 880px) {
+  .prod-showcase-section {
+    min-height: auto;
+    padding: 36px 0;
+  }
+
+  .prod-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .prod-tab-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 6px;
+  }
+
+  .prod-tab-sub {
+    display: none !important;
+  }
+
+  .prod-caps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .prod-mock-card {
+    grid-column: 1;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 540px) {
+  .prod-caps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .prod-tab-list {
+    grid-template-columns: 1fr;
+  }
+
+  .prod-mock-stats {
+    gap: 4px;
+  }
+
+  .prod-stat-value {
+    font-size: 14px;
+  }
+}

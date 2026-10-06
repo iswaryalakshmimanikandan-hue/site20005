@@ -1,0 +1,607 @@
+/* ==========================================================================
+   AskJuno — How We Build Section
+   Square boxed architecture for every content element.
+   Blueprint Blue theme (--bl) with crisp borders and clean paper background.
+   NO black BG.
+   ========================================================================== */
+
+#how-we-build {
+  padding: clamp(16px, 2.5vh, 28px) 0;
+  min-height: calc(100vh - 74px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  scroll-margin-top: 74px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+#how-we-build .wrap {
+  width: 100%;
+  max-width: min(1240px, 94vw);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  zoom: 1.05;
+}
+
+@supports not (zoom: 1.05) {
+  #how-we-build .wrap {
+    transform: scale(1.05);
+    transform-origin: center center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Header: Square Badge, Bold Title & Lead
+   -------------------------------------------------------------------------- */
+.hwb-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: clamp(12px, 1.8vh, 18px);
+  max-width: 780px;
+}
+
+/* Square Box Badge */
+.hwb-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  padding: 4px 10px;
+  border-radius: 0;
+  font-family: var(--fm, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--bl-soft, #EAF0FB);
+  border: 1px solid var(--bl-line, rgba(54, 92, 173, 0.35));
+  color: var(--bl, #365cad);
+}
+
+[data-theme="dark"] .hwb-badge {
+  background: var(--bl-soft, rgba(138, 168, 238, 0.16));
+  border-color: var(--bl-line, rgba(138, 168, 238, 0.35));
+  color: var(--bl, #8aa8ee);
+}
+
+.hwb-title {
+  font-family: var(--fb);
+  font-size: clamp(26px, 2.6vw, 36px);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.hwb-title em {
+  font-style: normal;
+  color: var(--bl, #365cad);
+}
+
+[data-theme="dark"] .hwb-title em {
+  color: var(--bl, #8aa8ee);
+}
+
+.hwb-lead {
+  font-family: var(--fb);
+  font-size: clamp(13px, 1.1vw, 14.5px);
+  color: var(--tx);
+  line-height: 1.45;
+  margin: 0;
+  opacity: 0.88;
+  max-width: 720px;
+}
+
+/* --------------------------------------------------------------------------
+   Main Interactive Card Container (Square Box)
+   -------------------------------------------------------------------------- */
+.hwb-card {
+  background: var(--paper);
+  border: 1.5px solid var(--line-2, #DBE2EA);
+  border-radius: 0;
+  box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+[data-theme="dark"] .hwb-card {
+  border-color: var(--line, rgba(255, 255, 255, 0.14));
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.4);
+}
+
+/* Stepper Tabs Strip (Square Box Tabs) */
+.hwb-stepper-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 10px 16px;
+  border-bottom: 1.5px solid var(--line-2, #DBE2EA);
+  background: var(--bg-2, #F8FAFC);
+  overflow-x: auto;
+}
+
+.hwb-step-tab {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--paper);
+  border: 1.5px solid var(--line-2, #CBD5E1);
+  border-radius: 0;
+  cursor: pointer;
+  padding: 7px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--fb);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.hwb-tab-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2.5px;
+  background: var(--bl, #365cad);
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+  animation: hwbTabProgress var(--dur, 10s) linear forwards;
+}
+
+[data-theme="dark"] .hwb-tab-progress {
+  background: var(--bl, #8aa8ee);
+}
+
+@keyframes hwbTabProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.hwb-step-tab:hover:not(.active) {
+  border-color: var(--bl, #365cad);
+  background: var(--bl-soft, #EAF0FB);
+  color: var(--bl, #365cad);
+}
+
+.hwb-step-tab.active {
+  background: var(--bl-soft, #EAF0FB);
+  color: var(--bl, #365cad);
+  border: 1.5px solid var(--bl, #365cad);
+  font-weight: 800;
+  box-shadow: 2px 2px 0 var(--bl, #365cad);
+}
+
+[data-theme="dark"] .hwb-step-tab {
+  background: var(--paper);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+[data-theme="dark"] .hwb-step-tab.active {
+  background: var(--bl-soft, rgba(138, 168, 238, 0.18));
+  border-color: var(--bl, #8aa8ee);
+  color: var(--bl, #8aa8ee);
+  box-shadow: 2px 2px 0 var(--bl, #8aa8ee);
+}
+
+.hwb-step-tab-num {
+  font-family: var(--fm, monospace);
+  font-size: 11.5px;
+  font-weight: 700;
+  opacity: 0.85;
+}
+
+/* Card Body Split (Left: Content, Right: Schematic Diagram) */
+.hwb-card-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: clamp(20px, 2.5vw, 36px);
+  padding: clamp(18px, 2vw, 26px);
+  align-items: stretch;
+  animation: hwbFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes hwbFadeIn {
+  from {
+    opacity: 0.35;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Left Content Column */
+.hwb-content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.hwb-content-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hwb-step-count {
+  font-family: var(--fm, monospace);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bl, #365cad);
+  margin: 0;
+}
+
+[data-theme="dark"] .hwb-step-count {
+  color: var(--bl, #8aa8ee);
+}
+
+.hwb-step-title {
+  font-family: var(--fb);
+  font-size: clamp(20px, 2vw, 26px);
+  font-weight: 800;
+  color: var(--ink);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.hwb-step-desc {
+  font-family: var(--fb);
+  font-size: 14px;
+  color: var(--tx);
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.92;
+}
+
+/* Square Box Chips List with Square Bullets */
+.hwb-chips-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  margin: 2px 0 0 0;
+  list-style: none;
+}
+
+.hwb-chip-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 0;
+  background: var(--bg-2, #F1F5F9);
+  border: 1px solid var(--line-2, #CBD5E1);
+  font-family: var(--fb);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: all 0.2s ease;
+}
+
+.hwb-chip-item:hover {
+  border-color: var(--bl, #365cad);
+  background: var(--bl-soft, #EAF0FB);
+}
+
+.hwb-chip-bullet {
+  width: 5px;
+  height: 5px;
+  border-radius: 0;
+  background: var(--bl, #365cad);
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .hwb-chip-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--ink);
+}
+
+[data-theme="dark"] .hwb-chip-item:hover {
+  border-color: var(--bl, #8aa8ee);
+  background: var(--bl-soft, rgba(138, 168, 238, 0.16));
+}
+
+[data-theme="dark"] .hwb-chip-bullet {
+  background: var(--bl, #8aa8ee);
+}
+
+/* Nav Action Buttons (Square Boxes) */
+.hwb-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.hwb-btn-prev {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--paper);
+  border: 1.5px solid var(--line-2, #CBD5E1);
+  border-radius: 0;
+  color: var(--ink);
+  font-family: var(--fb);
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 8px 18px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.hwb-btn-prev:hover {
+  border-color: var(--bl, #365cad);
+  background: var(--bl-soft, #EAF0FB);
+  color: var(--bl, #365cad);
+}
+
+[data-theme="dark"] .hwb-btn-prev {
+  background: var(--paper);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+[data-theme="dark"] .hwb-btn-prev:hover {
+  border-color: var(--bl, #8aa8ee);
+  color: var(--bl, #8aa8ee);
+}
+
+.hwb-btn-next {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--bl, #365cad);
+  border: 1.5px solid var(--bl, #365cad);
+  border-radius: 0;
+  color: #FFFFFF !important;
+  font-family: var(--fb);
+  font-size: 13.5px;
+  font-weight: 700;
+  padding: 8px 20px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.hwb-btn-next:hover {
+  background: #2b4c91;
+  box-shadow: 3px 3px 0 var(--ink);
+  transform: translate(-1px, -1px);
+}
+
+[data-theme="dark"] .hwb-btn-next {
+  background: var(--bl, #8aa8ee);
+  border-color: var(--bl, #8aa8ee);
+  color: #0E1220 !important;
+  box-shadow: 2px 2px 0 #FFFFFF;
+}
+
+[data-theme="dark"] .hwb-btn-next:hover {
+  background: #a4beff;
+  box-shadow: 3px 3px 0 #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   Right Schematic Diagram Preview Box (Square Box)
+   -------------------------------------------------------------------------- */
+.hwb-schematic-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hwb-schematic-card {
+  background: var(--bg-2, #F8FAFC);
+  border: 1.5px solid var(--line-2, #CBD5E1);
+  border-radius: 0;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 230px;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .hwb-schematic-card {
+  background: var(--bg-2, #121829);
+  border-color: var(--line, rgba(255, 255, 255, 0.12));
+}
+
+.hwb-schematic-svg {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  flex: 1;
+}
+
+.hwb-schematic-footer {
+  font-family: var(--fm, monospace);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bl, #365cad);
+  opacity: 0.9;
+  margin-top: 8px;
+}
+
+[data-theme="dark"] .hwb-schematic-footer {
+  color: var(--bl, #8aa8ee);
+}
+
+/* --------------------------------------------------------------------------
+   Bottom Banner (Square Box, Clean Theme - NO BLACK BG)
+   -------------------------------------------------------------------------- */
+.hwb-banner {
+  margin-top: clamp(12px, 1.6vh, 18px);
+  background: var(--bl-soft, #EAF0FB);
+  border: 1.5px solid var(--bl-line, rgba(54, 92, 173, 0.25));
+  border-left: 4px solid var(--bl, #365cad);
+  border-radius: 0;
+  padding: clamp(12px, 1.4vw, 16px) clamp(16px, 2vw, 24px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+[data-theme="dark"] .hwb-banner {
+  background: var(--bl-soft, rgba(138, 168, 238, 0.12));
+  border-color: var(--bl-line, rgba(138, 168, 238, 0.3));
+  border-left-color: var(--bl, #8aa8ee);
+}
+
+.hwb-banner-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.hwb-banner-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #10B981;
+  flex-shrink: 0;
+}
+
+.hwb-banner-title {
+  font-family: var(--fb);
+  font-size: clamp(14px, 1.2vw, 16.5px);
+  font-weight: 800;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.hwb-banner-desc {
+  font-family: var(--fb);
+  font-size: clamp(12.5px, 1.05vw, 14px);
+  color: var(--tx);
+  line-height: 1.4;
+  margin: 0;
+  flex: 1;
+  padding: 0 12px;
+}
+
+.hwb-banner-desc span {
+  color: var(--bl, #365cad);
+  font-weight: 700;
+}
+
+[data-theme="dark"] .hwb-banner-desc span {
+  color: var(--bl, #8aa8ee);
+}
+
+/* Square Box SLA Action CTA */
+.hwb-banner-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 0;
+  border: 1.5px solid var(--bl, #365cad);
+  background: var(--paper);
+  color: var(--bl, #365cad) !important;
+  font-family: var(--fb);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 2px 2px 0 var(--bl, #365cad);
+}
+
+.hwb-banner-cta:hover {
+  background: var(--bl, #365cad);
+  color: #FFFFFF !important;
+  transform: translate(-1px, -1px);
+}
+
+[data-theme="dark"] .hwb-banner-cta {
+  background: var(--paper);
+  border-color: var(--bl, #8aa8ee);
+  color: var(--bl, #8aa8ee) !important;
+  box-shadow: 2px 2px 0 var(--bl, #8aa8ee);
+}
+
+[data-theme="dark"] .hwb-banner-cta:hover {
+  background: var(--bl, #8aa8ee);
+  color: #0E1220 !important;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .hwb-card-body {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .hwb-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .hwb-banner-desc {
+    padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  #how-we-build {
+    min-height: auto;
+    padding: 32px 0;
+  }
+
+  #how-we-build .wrap {
+    zoom: 1;
+    transform: none;
+  }
+
+  .hwb-stepper-nav {
+    justify-content: flex-start;
+    padding: 8px 12px;
+  }
+
+  .hwb-step-tab {
+    padding: 6px 12px;
+    font-size: 12.5px;
+  }
+}
