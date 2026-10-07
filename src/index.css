@@ -3292,6 +3292,11 @@ footer.site .links a:hover {
   color: var(--ink);
 }
 
+[data-theme="dark"] .eng .card.card-principle {
+  background: #1b2e56 !important;
+  border-color: var(--bl) !important;
+}
+
 @media (max-width: 980px) {
   .eng {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4333,7 +4338,7 @@ footer.site .links a:hover {
 }
 
 .acc summary:focus-visible {
-  outline: 2px solid var(--or);
+  outline: 2px solid var(--bl);
   outline-offset: 2px;
 }
 

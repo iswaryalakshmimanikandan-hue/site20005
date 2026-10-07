@@ -87,10 +87,10 @@ const products = [
     mockHeader: { title: 'Medication Review', badge: 'KIOSK ACTIVE', badgeType: 'green' },
     mockType: 'reviews',
     mockReviews: [
-      { title: 'Duplicate Therapy', status: '⚠ Found', tagClass: 'tag-warn', sub: '2 products with Acetaminophen detected' },
-      { title: 'Drug Interactions', status: '✓ Clear', tagClass: 'tag-green', sub: 'No interactions identified' },
-      { title: 'Beers Criteria', status: '⚠ Review', tagClass: 'tag-warn', sub: 'Senior safety flag raised' },
-      { title: 'Consumer Report', status: '✓ Ready', tagClass: 'tag-green', sub: 'Summary generated for customer' }
+      { title: 'Duplicate Therapy', status: '⚠ Found', tagClass: 'tag-warn', sub: '2 products with Acetaminophen detected', pct: 100, barClass: 'bar-amber' },
+      { title: 'Drug Interactions', status: '✓ Clear', tagClass: 'tag-green', sub: 'No interactions identified', pct: 100, barClass: 'bar-green' },
+      { title: 'Beers Criteria', status: '⚠ Review', tagClass: 'tag-warn', sub: 'Senior safety flag raised', pct: 85, barClass: 'bar-amber' },
+      { title: 'Consumer Report', status: '✓ Ready', tagClass: 'tag-green', sub: 'Summary generated for customer', pct: 100, barClass: 'bar-green' }
     ],
     mockStats: [
       { val: 'OTC', lbl: 'FOCUSED' },
@@ -120,9 +120,9 @@ const products = [
     mockHeader: { title: 'Statement Verification', badge: 'AUTO REVIEW', badgeType: 'blue' },
     mockType: 'reviews',
     mockReviews: [
-      { title: 'Mathematical Accuracy', status: '✓ Pass', tagClass: 'tag-green', sub: '248 totals verified all correct' },
-      { title: 'Note-to-Statement', status: '✓ Pass', tagClass: 'tag-green', sub: 'All note values reconciled' },
-      { title: 'Going Concern', status: '⚠ Signals', tagClass: 'tag-warn', sub: 'Negative equity detected' }
+      { title: 'Mathematical Accuracy', status: '✓ Pass', tagClass: 'tag-green', sub: '248 totals verified all correct', pct: 100, barClass: 'bar-green' },
+      { title: 'Note-to-Statement', status: '✓ Pass', tagClass: 'tag-green', sub: 'All note values reconciled', pct: 100, barClass: 'bar-green' },
+      { title: 'Going Concern', status: '⚠ Signals', tagClass: 'tag-warn', sub: 'Negative equity detected', pct: 92, barClass: 'bar-blue' }
     ],
     mockStats: [
       { val: '<3min', lbl: 'PER REPORT' },
@@ -149,15 +149,13 @@ const products = [
     ],
     impact: 'Purpose-built technology that fits your workflows, scales with your needs, and creates measurable value from day one.',
     btnText: 'Discuss Your Project',
-    mockHeader: { title: 'Solutions We Build', badge: 'CUSTOM', badgeType: 'blue' },
-    mockType: 'chips',
-    mockChips: [
-      'AI Agents',
-      'Workflow Automation',
-      'SaaS Platforms',
-      'Enterprise Portals',
-      'Business Intelligence Dashboards',
-      'Custom Integrations'
+    mockHeader: { title: 'Solutions Pipeline', badge: 'CUSTOM', badgeType: 'blue' },
+    mockType: 'progress',
+    mockRows: [
+      { label: 'Autonomous AI Agents', status: 'Active', statusClass: 'st-ok', barClass: 'bar-green', pct: 98 },
+      { label: 'Workflow Engine Automation', status: 'Live', statusClass: 'st-ok', barClass: 'bar-green', pct: 94 },
+      { label: 'Enterprise Portals & SaaS', status: 'Deployed', statusClass: 'st-blue', barClass: 'bar-blue', pct: 88 },
+      { label: 'Custom BI & ERP Bridges', status: 'Integrated', statusClass: 'st-blue', barClass: 'bar-blue', pct: 82 }
     ],
     mockStats: [
       { val: '100%', lbl: 'CUSTOM-BUILT' },
@@ -346,13 +344,146 @@ function CapabilityIcon({ type }) {
   }
 }
 
-const AUTOPLAY_DURATION = 10000;
-const MANUAL_HOLD_DURATION = 30000;
+const AUTOPLAY_DURATION = 10000; // 10 seconds auto-advance
+const MANUAL_HOLD_DURATION = 30000; // 30 seconds manual hold
+
+function AnimatedProgressBar({ pct, barClass, delay = 0, triggerKey }) {
+  const [currentPct, setCurrentPct] = useState(0);
+
+  useEffect(() => {
+    setCurrentPct(0);
+    const timeout = setTimeout(() => {
+      const duration = 2200; // Slower, smoother bar fill
+      const startTime = performance.now();
+      let animId;
+
+      const step = (now) => {
+        const elapsed = now - startTime;
+        const progress = Math.min(1, elapsed / duration);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const val = Math.min(pct, Math.round(pct * ease));
+        setCurrentPct(val);
+
+        if (progress < 1) {
+          animId = requestAnimationFrame(step);
+        } else {
+          setCurrentPct(pct);
+        }
+      };
+
+      animId = requestAnimationFrame(step);
+      return () => cancelAnimationFrame(animId);
+    }, delay);
+
+    return () => clearTimeout(timeout);
+  }, [pct, delay, triggerKey]);
+
+  return (
+    <div className="prod-pipe-bar-row">
+      <div className="prod-pipe-bar">
+        <div
+          className={`prod-pipe-fill ${barClass}`}
+          style={{ width: `${currentPct}%` }}
+        >
+          <span className="prod-pipe-shimmer" />
+        </div>
+      </div>
+      <span className="prod-pipe-pct-val">{currentPct}%</span>
+    </div>
+  );
+}
+
+function AnimatedStatValue({ value, triggerKey }) {
+  const [display, setDisplay] = useState(value);
+
+  useEffect(() => {
+    const valStr = String(value).trim();
+    const match = valStr.match(/^([<>]?)\s*([\d,.]+)\s*(.*)$/);
+
+    if (match) {
+      const prefix = match[1] || '';
+      const numClean = match[2].replace(/,/g, '');
+      const suffix = match[3] || '';
+      const target = parseFloat(numClean);
+
+      if (!isNaN(target)) {
+        const hasComma = match[2].includes(',');
+        const decimals = match[2].includes('.') ? (match[2].split('.')[1] || '').length : 0;
+        const duration = 2200; // Slower, readable count animation
+        const startTime = performance.now();
+        let animId;
+
+        const update = (now) => {
+          const elapsed = now - startTime;
+          const progress = Math.min(1, elapsed / duration);
+          const ease = 1 - Math.pow(1 - progress, 3);
+          const current = target * ease;
+
+          let numFormatted;
+          if (decimals > 0) {
+            numFormatted = current.toFixed(decimals);
+          } else {
+            numFormatted = Math.round(current).toString();
+          }
+
+          if (hasComma) {
+            const parts = numFormatted.split('.');
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+            numFormatted = parts.join('.');
+          }
+
+          setDisplay(`${prefix}${numFormatted}${suffix}`);
+
+          if (progress < 1) {
+            animId = requestAnimationFrame(update);
+          } else {
+            setDisplay(valStr);
+          }
+        };
+
+        setDisplay(`${prefix}0${suffix}`);
+        animId = requestAnimationFrame(update);
+        return () => cancelAnimationFrame(animId);
+      }
+    }
+
+    // High-tech matrix scramble for text tokens (OTC, FDA, ISA, ∞)
+    const chars = '0123456789ABCDEFGHJKLMNPQRSTUVWXYZ';
+    const targetStr = valStr;
+    const duration = 800; // Slightly slower scramble
+    const startTime = performance.now();
+    let animId;
+
+    const scramble = (now) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(1, elapsed / duration);
+
+      if (progress < 1) {
+        const scrambled = targetStr
+          .split('')
+          .map((ch, idx) => {
+            if (idx / targetStr.length < progress) return ch;
+            return chars[Math.floor(Math.random() * chars.length)];
+          })
+          .join('');
+        setDisplay(scrambled);
+        animId = requestAnimationFrame(scramble);
+      } else {
+        setDisplay(targetStr);
+      }
+    };
+
+    animId = requestAnimationFrame(scramble);
+    return () => cancelAnimationFrame(animId);
+  }, [value, triggerKey]);
+
+  return <span className="prod-stat-value">{display}</span>;
+}
 
 export default function ProductsSection() {
   const [activeTab, setActiveTab] = useState(0);
   const [isManual, setIsManual] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+  const [manualCount, setManualCount] = useState(0);
   const timerRef = useRef(null);
 
   const clearTimer = useCallback(() => {
@@ -365,32 +496,38 @@ export default function ProductsSection() {
   useEffect(() => {
     clearTimer();
 
-    // If user is hovering over the showcase, pause autoplay to allow inspection/reading
-    if (isHovered) return;
-
     const duration = isManual ? MANUAL_HOLD_DURATION : AUTOPLAY_DURATION;
 
     timerRef.current = setTimeout(() => {
+      // Advance to next product and resume normal 10s auto-rotation
       setIsManual(false);
       setActiveTab((prev) => (prev + 1) % products.length);
+      setManualCount((c) => c + 1);
     }, duration);
 
     return () => clearTimer();
-  }, [activeTab, isManual, isHovered, clearTimer]);
+  }, [activeTab, isManual, manualCount, clearTimer]);
 
   const handleManualSelect = useCallback((index) => {
     clearTimer();
     setActiveTab(index);
     setIsManual(true);
+    setManualCount((c) => c + 1);
   }, [clearTimer]);
 
   const handlePrev = useCallback(() => {
-    handleManualSelect((activeTab - 1 + products.length) % products.length);
-  }, [activeTab, handleManualSelect]);
+    clearTimer();
+    setActiveTab((prev) => (prev - 1 + products.length) % products.length);
+    setIsManual(true);
+    setManualCount((c) => c + 1);
+  }, [clearTimer]);
 
   const handleNext = useCallback(() => {
-    handleManualSelect((activeTab + 1) % products.length);
-  }, [activeTab, handleManualSelect]);
+    clearTimer();
+    setActiveTab((prev) => (prev + 1) % products.length);
+    setIsManual(true);
+    setManualCount((c) => c + 1);
+  }, [clearTimer]);
 
   const handleKeyDown = (e, index) => {
     if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
@@ -403,14 +540,13 @@ export default function ProductsSection() {
   };
 
   const cur = products[activeTab];
+  const barDur = isManual ? '30s' : '10s';
 
   return (
     <section
       className="sec prod-showcase-section"
       id="products"
       aria-labelledby="products-title"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
     >
       <div className="wrap">
         {/* Section Header */}
@@ -455,6 +591,15 @@ export default function ProductsSection() {
                         </svg>
                       </span>
                     )}
+                    {isActive && (
+                      <span className="prod-tab-track" aria-hidden="true">
+                        <span
+                          className="prod-tab-progress"
+                          key={`prod-bar-${activeTab}-${isManual ? 'man' : 'auto'}-${manualCount}`}
+                          style={{ '--dur': barDur }}
+                        />
+                      </span>
+                    )}
                   </button>
                 );
               })}
@@ -473,6 +618,10 @@ export default function ProductsSection() {
                   <polyline points="5 12 12 5 19 12" />
                 </svg>
               </button>
+              <span className="prod-timer-badge" title="Auto-advance rotation timer">
+                <span className="prod-timer-pulse" aria-hidden="true" />
+                <span>{isManual ? '30s hold' : '10s auto'}</span>
+              </span>
               <button
                 type="button"
                 className="prod-arrow-btn"
@@ -543,7 +692,7 @@ export default function ProductsSection() {
 
           {/* Column 3: Interactive Mock Preview Card */}
           <div
-            key={`mock-${cur.id}`}
+            key={`mock-${cur.id}-${manualCount}`}
             className="prod-mock-card"
             aria-hidden="true"
           >
@@ -551,13 +700,14 @@ export default function ProductsSection() {
             <div className="prod-mock-top">
               <h4 className="prod-mock-title">{cur.mockHeader.title}</h4>
               <span className={`prod-mock-badge badge-${cur.mockHeader.badgeType}`}>
+                <span className="prod-live-pulse-dot" aria-hidden="true" />
                 {cur.mockHeader.badge}
               </span>
             </div>
 
             {/* Body */}
             <div className="prod-mock-body">
-              {/* Progress rows for Ariva & EETi */}
+              {/* Progress rows for Ariva, EETi & Custom AI */}
               {cur.mockType === 'progress' &&
                 cur.mockRows.map((r, i) => (
                   <div key={i} className="prod-pipe-item">
@@ -565,12 +715,12 @@ export default function ProductsSection() {
                       <span className="prod-pipe-label">{r.label}</span>
                       <span className={`prod-pipe-status ${r.statusClass}`}>{r.status}</span>
                     </div>
-                    <div className="prod-pipe-bar">
-                      <div
-                        className={`prod-pipe-fill ${r.barClass}`}
-                        style={{ width: `${r.pct}%` }}
-                      />
-                    </div>
+                    <AnimatedProgressBar
+                      pct={r.pct}
+                      barClass={r.barClass}
+                      delay={i * 150}
+                      triggerKey={`${cur.id}-${manualCount}`}
+                    />
                   </div>
                 ))}
 
@@ -583,27 +733,24 @@ export default function ProductsSection() {
                       <span className={`prod-tag-badge ${r.tagClass}`}>{r.status}</span>
                     </div>
                     <span className="prod-review-sub">{r.sub}</span>
+                    <AnimatedProgressBar
+                      pct={r.pct || 100}
+                      barClass={r.barClass || 'bar-green'}
+                      delay={i * 150}
+                      triggerKey={`${cur.id}-${manualCount}`}
+                    />
                   </div>
                 ))}
-
-              {/* Pill chips for Custom AI & Enterprise */}
-              {cur.mockType === 'chips' && (
-                <div className="prod-solutions-chips">
-                  {cur.mockChips.map((chip, i) => (
-                    <span key={i} className="prod-chip-pill">
-                      <span className="prod-chip-bullet" />
-                      {chip}
-                    </span>
-                  ))}
-                </div>
-              )}
             </div>
 
-            {/* Footer Stats */}
+            {/* Footer Stats with Animated Number Counts */}
             <div className="prod-mock-stats">
               {cur.mockStats.map((s, i) => (
                 <div key={i} className="prod-stat-cell">
-                  <span className="prod-stat-value">{s.val}</span>
+                  <AnimatedStatValue
+                    value={s.val}
+                    triggerKey={`${cur.id}-${manualCount}`}
+                  />
                   <span className="prod-stat-label">{s.lbl}</span>
                 </div>
               ))}

@@ -87,7 +87,7 @@ export default function EngineeringSection() {
             </ul>
           </article>
 
-          <article className="card rv in" style={{ '--d': 2, background: '#4b7fdaff', borderColor: '#4b7fdaff', color: '#ffffffff' }}>
+          <article className="card card-principle rv in" style={{ '--d': 2, background: 'var(--bl, #365CAD)', borderColor: 'var(--bl, #365CAD)', color: '#ffffff' }}>
             <span className="num" style={{ color: '#fff', opacity: 0.8 }}>PRINCIPLE</span>
             <h3 style={{ color: '#fff' }}>Technology choices that stand the test of time.</h3>
             <p style={{ color: '#fff', opacity: 0.9 }}>

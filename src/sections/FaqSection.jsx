@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const faqs = [
   {
@@ -24,6 +24,13 @@ const faqs = [
 ];
 
 export default function FaqSection() {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const handleToggle = (index, e) => {
+    e.preventDefault();
+    setOpenIndex((prev) => (prev === index ? null : index));
+  };
+
   return (
     <section className="sec" id="faq" aria-labelledby="h-faq">
       <div className="wrap faq">
@@ -55,12 +62,21 @@ export default function FaqSection() {
         </div>
 
         <div className="acc rv in">
-          {faqs.map((faq, i) => (
-            <details key={i} defaultOpen={i === 0}>
-              <summary>{faq.q}</summary>
-              <p>{faq.a}</p>
-            </details>
-          ))}
+          {faqs.map((faq, i) => {
+            const isOpen = openIndex === i;
+            return (
+              <details
+                key={i}
+                name="faq-accordion"
+                open={isOpen}
+              >
+                <summary onClick={(e) => handleToggle(i, e)}>
+                  {faq.q}
+                </summary>
+                <p>{faq.a}</p>
+              </details>
+            );
+          })}
         </div>
       </div>
     </section>
