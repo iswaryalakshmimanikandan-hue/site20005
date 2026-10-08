@@ -31,7 +31,7 @@ const industries = [
         <rect x="17" y="4" width="4" height="16" />
       </svg>
     ),
-    image: '/assets/img/industries/manufacturing.jpg',
+    image: '/assets/img/industries/manufacturing.svg',
     btnText: 'Discuss Your Manufacturing Project →'
   },
   {
@@ -62,7 +62,7 @@ const industries = [
         <path d="M12 8v8M8 12h8" />
       </svg>
     ),
-    image: '/assets/img/industries/healthcare.jpg',
+    image: '/assets/img/industries/healthcare.svg',
     btnText: 'Discuss Your Healthcare Project →'
   },
   {
@@ -94,7 +94,7 @@ const industries = [
         <path d="M2 3h3.5l2.2 11.5h11.8L21 7H6" />
       </svg>
     ),
-    image: '/assets/img/industries/retail.jpg',
+    image: '/assets/img/industries/retail.svg',
     btnText: 'Discuss Your Retail Project →'
   },
   {
@@ -126,7 +126,7 @@ const industries = [
         <rect x="7" y="13" width="3" height="3" />
       </svg>
     ),
-    image: '/assets/img/industries/finance.jpg',
+    image: '/assets/img/industries/finance.svg',
     btnText: 'Discuss Your Financial Services Project →'
   },
   {
@@ -159,7 +159,7 @@ const industries = [
         <rect x="17" y="17" width="3" height="3" />
       </svg>
     ),
-    image: '/assets/img/industries/logistics.jpg',
+    image: '/assets/img/industries/logistics.svg',
     btnText: 'Discuss Your Logistics Project →'
   },
   {
@@ -189,7 +189,7 @@ const industries = [
         <path d="M18.178 8c5.096 0 5.096 8 0 8-2.548 0-3.822-4-5.096-4-1.274 0-2.548 4-5.096 4-5.096 0-5.096-8 0-8 2.548 0 3.822 4 5.096 4 1.274 0 2.548-4 5.096-4z" />
       </svg>
     ),
-    image: '/assets/img/industries/saas.jpg',
+    image: '/assets/img/industries/saas.svg',
     btnText: 'Discuss Your Enterprise SaaS Project →'
   }
 ];

@@ -176,7 +176,7 @@ export default function PrinciplesSection() {
         <div className="inside rv in">
           <figure>
             <img
-              src="/assets/img/office_better_together.png"
+              src="/assets/img/office_better_together.svg"
               alt="AskJuno office with the ‘Better Together’ sign"
               loading="lazy"
               width="1100"

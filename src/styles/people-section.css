@@ -86,10 +86,10 @@
 .people-nav-btn {
   appearance: none;
   -webkit-appearance: none;
-  background: var(--bg-2, #F8FAFC);
-  border: 1.5px solid var(--line-2, #CBD5E1);
+  background: var(--blue, #365cad);
+  border: 1.5px solid var(--blue, #365cad);
   border-radius: 0;
-  color: var(--ink);
+  color: #FFFFFF;
   width: 36px;
   height: 36px;
   display: inline-flex;
@@ -98,13 +98,13 @@
   cursor: pointer;
   font-size: 16px;
   font-weight: 700;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out, color 250ms ease-in-out, transform 250ms ease-in-out;
 }
 
 .people-nav-btn:hover {
-  background: var(--bl-soft, #EAF0FB);
-  border-color: var(--bl, #365cad);
-  color: var(--bl, #365cad);
+  background: var(--or, #F09018);
+  border-color: var(--or, #F09018);
+  color: #FFFFFF;
   transform: translateY(-1px);
 }
 
@@ -113,15 +113,15 @@
 }
 
 [data-theme="dark"] .people-nav-btn {
-  background: var(--paper);
-  border-color: var(--line);
-  color: var(--ink);
+  background: var(--blue, #365cad);
+  border-color: var(--blue, #365cad);
+  color: #FFFFFF;
 }
 
 [data-theme="dark"] .people-nav-btn:hover {
-  background: var(--bl-soft, rgba(138, 168, 238, 0.18));
-  border-color: var(--bl, #8aa8ee);
-  color: var(--bl, #8aa8ee);
+  background: var(--or, #F09018);
+  border-color: var(--or, #F09018);
+  color: #FFFFFF;
 }
 
 /* --------------------------------------------------------------------------

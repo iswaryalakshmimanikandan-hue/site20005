@@ -64,7 +64,7 @@ export const articlesData = [
     date: 'October 02, 2026',
     title: 'Turning Data into Better Decisions',
     lead: 'Architectural blueprints for modern analytics, transitioning from static historical dashboards to predictive decision intelligence engines.',
-    img: '/assets/img/insights/better-decisions.webp',
+    img: '/assets/img/insights/better-decisions.svg',
     caption: 'Modern analytics architectures bridge the gap between retrospective reporting and active decision-making.',
     summary: 'Most organizations are data-rich but insight-poor. Traditional BI systems report what already happened, leaving leadership to guess what to do next. Decision intelligence embeds predictive models directly into day-to-day workflow tooling.',
     sections: [
@@ -92,7 +92,7 @@ export const articlesData = [
     date: 'October 02, 2026',
     title: 'Intelligent Workflow Automation: Orchestrating Human-AI Hand-Offs',
     lead: 'Best practices for building state machines that delegate routine operations to AI while guaranteeing instant escalation for edge cases.',
-    img: '/assets/img/insights/workflow-automation.webp',
+    img: '/assets/img/insights/workflow-automation.svg',
     caption: 'Reliable workflow automation balances machine speed with explicit human verification boundaries.',
     summary: 'True workflow efficiency is not about removing humans entirely; it is about eliminating manual drudgery while ensuring human experts review ambiguous boundary cases with complete auditability.',
     sections: [
@@ -120,7 +120,7 @@ export const articlesData = [
     date: 'October 02, 2026',
     title: 'Modernizing Legacy Systems for Growth',
     lead: 'How leading enterprises incrementally extract domain services from core mainframes and legacy databases without risking daily transactional integrity.',
-    img: '/assets/img/insights/legacy-modernization.webp',
+    img: '/assets/img/insights/legacy-modernization.svg',
     caption: 'Incremental migration strategies ensure continuous business continuity throughout complex enterprise transformations.',
     summary: 'The big-bang rewrite is a historic failure mode in enterprise IT. Modern software architecture leverages strangler fig patterns, change data capture, and API facade layers to modernize core systems while maintaining uninterrupted live operations.',
     sections: [
@@ -148,7 +148,7 @@ export const articlesData = [
     date: 'October 02, 2026',
     title: 'Modern Application Development: Speed Without Compromise',
     lead: 'A deep dive into continuous delivery practices that maintain product craft and sub-second feedback loops across high-growth engineering organizations.',
-    img: '/assets/img/insights/application-development-standards.webp',
+    img: '/assets/img/insights/application-development-standards.svg',
     caption: 'Engineering discipline and deployment speed are complementary when supported by automated quality gates.',
     summary: 'Fast delivery does not have to produce sloppy code. Elite software organizations enforce automated testing, trunk-based development, and comprehensive design systems to release to production multiple times a day without regressions.',
     sections: [
@@ -176,7 +176,7 @@ export const articlesData = [
     date: 'October 02, 2026',
     title: 'Deploying Autonomous AI Agents in Mission-Critical Systems',
     lead: 'How to build reliable autonomous agents with tool-calling limits, self-correcting loops, and cryptographic authentication tokens.',
-    img: '/assets/img/insights/ai-agents-production.webp',
+    img: '/assets/img/insights/ai-agents-production.svg',
     caption: 'Enterprise AI agents require bounded action spaces and deterministic safety verifications.',
     summary: 'Moving AI from conversational chatbots to autonomous agents capable of querying databases and triggering financial transactions requires strict sandboxing, idempotency guarantees, and immutable execution logging.',
     sections: [
@@ -204,7 +204,7 @@ export const articlesData = [
     date: 'October 02, 2026',
     title: 'The Future of Document Intelligence: From Extraction to Decisions',
     lead: 'Discover how intelligent document pipelines extract tables, understand cross-page context, and execute automated downstream business transactions in seconds.',
-    img: '/assets/img/insights/document-intelligence.webp',
+    img: '/assets/img/insights/document-intelligence.svg',
     caption: 'Transform unstructured documents into structured, validated data streams.',
     summary: 'Manual data entry from invoices, purchase orders, and medical charts costs enterprises millions in wasted hours and transcription errors. Modern multimodal models extract complex nested tables and cross-reference records with zero manual intervention.',
     sections: [
@@ -232,7 +232,7 @@ export const articlesData = [
     date: 'October 02, 2026',
     title: 'The Engineering Leader\'s Playbook for High-Velocity Teams',
     lead: 'Actionable strategies for engineering leaders: reducing cognitive load, decoupling team dependencies, and aligning technical milestones with board-level goals.',
-    img: '/assets/img/insights/engineering-leadership.webp',
+    img: '/assets/img/insights/engineering-leadership.svg',
     caption: 'Empowering engineering teams begins with organizational clarity and psychological safety.',
     summary: 'Great engineering leadership is about removing friction so engineers can focus on craft and problem-solving. This playbook covers team topologies, reducing inter-team blocking, and establishing clear engineering standards.',
     sections: [
@@ -260,7 +260,7 @@ export const articlesData = [
     date: 'October 02, 2026',
     title: 'Modernizing Enterprise Applications: Unifying ERP and CRM',
     lead: 'Architectural blueprints for event-driven integration layers that harmonize mission-critical enterprise systems in real time.',
-    img: '/assets/img/insights/enterprise-applications-integration.webp',
+    img: '/assets/img/insights/enterprise-applications-integration.svg',
     caption: 'Event-driven architectures bridge legacy silos and real-time customer touchpoints.',
     summary: 'When sales teams cannot see inventory levels and billing systems cannot access customer contract updates, business velocity suffers. Real-time integration platforms unify operational datasets without invasive custom code on each legacy system.',
     sections: [
@@ -288,7 +288,7 @@ export const articlesData = [
     date: 'October 02, 2026',
     title: 'Beyond the AI Hype: Finding Real Business Value in Digital Strategy',
     lead: 'A pragmatic framework for prioritizing high-impact digital initiatives that lower operating costs while elevating customer lifetime value.',
-    img: '/assets/img/insights/digital-strategy.webp',
+    img: '/assets/img/insights/digital-strategy.svg',
     caption: 'Focusing on concrete operational pain points ensures digital investments yield quantifiable returns.',
     summary: 'Rushing to implement flashy technology pilots without understanding core unit economics leads to shelfware. A sound digital strategy starts with process mapping, identifying high-cost manual friction, and selecting the most direct technological solution.',
     sections: [
@@ -316,7 +316,7 @@ export const articlesData = [
     date: 'October 02, 2026',
     title: 'Building Scalable Software Beyond Version 1',
     lead: 'Architectural patterns for evolving software from rapid prototyping to enterprise-scale resilience, distributed caching, and zero-downtime database migrations.',
-    img: '/assets/img/insights/scalable-software.webp',
+    img: '/assets/img/insights/scalable-software.svg',
     caption: 'Scaling software demands a shift from quick feature delivery to systematic resilience and observable boundary contracts.',
     summary: 'Premature optimization kills agility, but architectural negligence creates technical debt that paralyzes future delivery. The sweet spot lies in modular monoliths with strict domain boundaries that can decompose when traffic inflection points arrive.',
     sections: [

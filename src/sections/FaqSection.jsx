@@ -18,6 +18,10 @@ const faqs = [
     a: 'We offer flexible models based on your objectives: dedicated product engineering teams who embed as an extension of your company, fixed-scope project delivery with transparent milestones, or strategic technology consulting and architecture design.'
   },
   {
+    q: 'Who owns the intellectual property and code you build?',
+    a: 'You do. All source code, architecture, AI models and intellectual property developed during the engagement belong 100% to your organisation upon completion. We provide full repository access, thorough documentation and complete handover so your team has full autonomy without vendor lock-in.'
+  },
+  {
     q: 'How do I get started?',
     a: 'Getting started is simple. Submit the contact form below or email us at enquiry@askjuno.com. We’ll schedule a 30-minute discovery call to learn about your goals, evaluate technical requirements and outline a tailored proposal with clear next steps.'
   }
@@ -33,33 +37,34 @@ export default function FaqSection() {
 
   return (
     <section className="sec" id="faq" aria-labelledby="h-faq">
-      <div className="wrap faq">
-        <div>
-          <p className="eyebrow">FAQ</p>
-          <h2 id="h-faq" className="h2 rv in" style={{ marginTop: 14 }}>
-            Questions, <em>answered.</em>
-          </h2>
-          <p className="lead rv in" style={{ marginTop: 14 }}>
-            Can’t find what you’re looking for? Write to us directly, we’re happy to answer any questions about how we work.
-          </p>
-          <div className="feat3 rv in">
-            <div>
-              <span className="num">01</span>
-              <b>Quick answers</b>
-              <span className="d">Get the information you need, fast.</span>
-            </div>
-            <div>
-              <span className="num">02</span>
-              <b>Clear process</b>
-              <span className="d">Understand how we work.</span>
-            </div>
-            <div>
-              <span className="num">03</span>
-              <b>No surprises</b>
-              <span className="d">Transparent, honest and reliable.</span>
+      <div className="wrap">
+        <p className="eyebrow" style={{ marginBottom: 14 }}>FAQ</p>
+        <div className="faq">
+          <div>
+            <h2 id="h-faq" className="h2 rv in">
+              Questions, <em>answered.</em>
+            </h2>
+            <p className="lead rv in" style={{ marginTop: 14 }}>
+              Can’t find what you’re looking for? Write to us directly, we’re happy to answer any questions about how we work.
+            </p>
+            <div className="feat3 rv in">
+              <div>
+                <span className="num">01</span>
+                <b>Quick answers</b>
+                <span className="d">Get the information you need, fast.</span>
+              </div>
+              <div>
+                <span className="num">02</span>
+                <b>Clear process</b>
+                <span className="d">Understand how we work.</span>
+              </div>
+              <div>
+                <span className="num">03</span>
+                <b>No surprises</b>
+                <span className="d">Transparent, honest and reliable.</span>
+              </div>
             </div>
           </div>
-        </div>
 
         <div className="acc rv in">
           {faqs.map((faq, i) => {
@@ -79,6 +84,7 @@ export default function FaqSection() {
           })}
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   );
 }

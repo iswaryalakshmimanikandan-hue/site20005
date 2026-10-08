@@ -3,7 +3,7 @@
   --blue: #365CAD;
   --or: #F09018;
   --or-2: #FFAA3D;
-  --fd: Caladea, Cambria, Georgia, serif;
+  --fd: Carlito, Calibri, "Segoe UI", system-ui, sans-serif;
   --fb: Carlito, Calibri, "Segoe UI", system-ui, sans-serif;
   --fm: "IBM Plex Mono", ui-monospace, Menlo, monospace;
   --pad: clamp(20px, 5vw, 72px);
@@ -319,7 +319,16 @@ body.menu-open {
 }
 
 /* type + buttons */
-.btn {
+.btn,
+.btn-or,
+.btn-ink,
+.btn-ln,
+.btn-primary,
+.btn-sec,
+button.btn,
+a.btn,
+button[type="submit"],
+input[type="submit"] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -330,39 +339,40 @@ body.menu-open {
   font: 700 16px var(--fb);
   text-decoration: none;
   cursor: pointer;
-  border: 0;
+  border: 1.5px solid var(--blue, #365CAD);
+  background: var(--blue, #365CAD) !important;
+  background-color: var(--blue, #365CAD) !important;
+  border-color: var(--blue, #365CAD) !important;
+  color: #FFFFFF !important;
   white-space: nowrap;
   flex-shrink: 0;
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out, color 250ms ease-in-out, box-shadow 250ms ease-in-out, transform 250ms ease-in-out !important;
 }
 
-.btn-or {
-  background: var(--or);
-  color: #15161C !important;
+.btn:hover,
+.btn-or:hover,
+.btn-ink:hover,
+.btn-ln:hover,
+.btn-primary:hover,
+.btn-sec:hover,
+button.btn:hover,
+a.btn:hover,
+button[type="submit"]:hover,
+input[type="submit"]:hover {
+  background: var(--or, #F09018) !important;
+  background-color: var(--or, #F09018) !important;
+  border-color: var(--or, #F09018) !important;
+  color: #FFFFFF !important;
 }
 
-.btn-or:hover {
-  background: var(--or-2);
-}
-
-.btn-ink {
-  background: var(--ink);
-  color: var(--bg) !important;
-}
-
-.btn-ink:hover {
-  background: var(--bl);
-  color: #fff !important;
-}
-
-.btn-ln {
-  background: transparent;
-  color: var(--ink) !important;
-  border: 1px solid var(--ink);
-}
-
-.btn-ln:hover {
-  background: var(--ink);
-  color: var(--bg) !important;
+.btn svg,
+.btn-or svg,
+.btn-ink svg,
+.btn-ln svg,
+button.btn svg,
+a.btn svg {
+  stroke: currentColor;
+  transition: stroke 250ms ease-in-out, fill 250ms ease-in-out;
 }
 
 .btn-sm {
@@ -386,7 +396,7 @@ body.menu-open {
 }
 
 .h1 {
-  font: 700 clamp(44px, 6vw, 92px)/0.96 var(--fd);
+  font: 800 clamp(44px, 6vw, 92px)/0.96 var(--fd);
   color: var(--ink);
   letter-spacing: -0.025em;
   text-wrap: balance;
@@ -1198,16 +1208,17 @@ footer.site .wrap {
   width: 48px;
   height: 48px;
   border-radius: 8px;
-  border: 1px solid var(--line-2);
-  background: var(--head);
-  color: var(--ink);
+  border: 1.5px solid var(--blue, #365CAD);
+  background: var(--blue, #365CAD);
+  color: #FFFFFF;
   cursor: pointer;
-  transition: opacity .2s, transform .2s;
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out, color 250ms ease-in-out, opacity .2s, transform .2s;
 }
 
 .jumpers button:hover {
-  border-color: var(--bl);
-  color: var(--bl);
+  background: var(--or, #F09018);
+  border-color: var(--or, #F09018);
+  color: #FFFFFF;
 }
 
 .jumpers button svg {
@@ -1249,8 +1260,21 @@ footer.site .wrap {
 }
 
 .nav a.btn-ink,
-.menu a.btn-ink {
-  color: var(--bg);
+.menu a.btn-ink,
+.nav a.btn,
+.menu a.btn {
+  color: #FFFFFF !important;
+  background: var(--blue, #365CAD) !important;
+  border-color: var(--blue, #365CAD) !important;
+}
+
+.nav a.btn-ink:hover,
+.menu a.btn-ink:hover,
+.nav a.btn:hover,
+.menu a.btn:hover {
+  background: var(--or, #F09018) !important;
+  border-color: var(--or, #F09018) !important;
+  color: #FFFFFF !important;
 }
 
 @media (max-width: 720px) {
@@ -1295,7 +1319,7 @@ footer.site .wrap {
 
 .wb h1 {
   margin: 0;
-  font: 700 min(7vw, 11vh) / 0.96 var(--fd);
+  font: 800 min(7vw, 11vh) / 0.96 var(--fd);
   color: var(--ink);
   letter-spacing: -0.025em;
   transform: scale(calc(1 + var(--q, 0) * 0.04));
@@ -1938,8 +1962,9 @@ footer.site .links a:hover {
   color: var(--bl);
   white-space: nowrap;
   opacity: 0;
-  transform: translateX(4px);
-  transition: opacity .2s, transform .2s;
+  transform: translateX(6px);
+  transition: opacity 240ms ease, transform 240ms ease;
+  pointer-events: none;
 }
 
 .dots a i {
@@ -1951,20 +1976,47 @@ footer.site .links a:hover {
   transition: background .2s, transform .2s;
 }
 
+/* Active indicator dot */
 .dots a[aria-current="true"] i {
   background: var(--bl);
   transform: scale(1.3);
 }
 
+/* Minimal state: active section label remains visible next to indicator */
 .dots a[aria-current="true"] small {
   opacity: 1;
-  transform: none;
+  transform: translateX(0);
+  pointer-events: auto;
 }
 
-.dots a:hover small,
+/* Hover-to-reveal: complete list of sections appears next to sidebar */
+.dots:hover a small,
+.dots.is-revealed a small {
+  opacity: 0.72;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Currently active section remains visually highlighted in revealed list */
+.dots:hover a[aria-current="true"] small,
+.dots.is-revealed a[aria-current="true"] small {
+  opacity: 1;
+  color: var(--bl);
+  transform: translateX(0);
+}
+
+/* Specific section link hover in revealed flyout */
+.dots:hover a:hover small,
+.dots.is-revealed a:hover small,
 .dots a:focus-visible small {
   opacity: 1;
-  transform: none;
+  color: var(--bl);
+  transform: translateX(0);
+}
+
+.dots:hover a:hover i,
+.dots.is-revealed a:hover i {
+  background: var(--bl);
 }
 
 .dots a:focus-visible {
@@ -3351,73 +3403,121 @@ footer.site .links a:hover {
 .steps4 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0;
-  border: 1.5px solid var(--ink);
-  background: var(--paper);
-  position: relative;
+  gap: 16px;
+  background: transparent;
+  border: 0;
+  margin-top: clamp(32px, 4vw, 56px);
 }
 
-.steps4>div {
-  padding: 24px 20px;
-  border-left: 1px solid var(--line-2);
+.step-card {
+  padding: 24px 20px 20px;
+  border: 1.5px solid var(--ink);
+  border-radius: 8px;
+  background: var(--paper);
   display: flex;
   flex-direction: column;
-  gap: 10px;
   position: relative;
+  box-sizing: border-box;
+  box-shadow: 2.5px 3px 0 var(--ink);
+  transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.steps4>div:first-child {
-  border-left: 0;
+.step-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 3.5px 4.5px 0 var(--ink);
 }
 
-.steps4>div:not(:last-child)::after {
-  content: "→";
-  position: absolute;
-  right: -13px;
-  top: 26px;
-  z-index: 2;
-  width: 24px;
-  height: 24px;
-  display: grid;
-  place-items: center;
-  background: var(--bl);
-  color: #fff;
-  font: 700 12px var(--fm);
+.step-badge {
+  font: 700 17px var(--fm);
+  color: var(--bl);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+  display: inline-block;
 }
 
-.steps4 h3 {
-  margin: 0;
-  font: 700 21px var(--fd);
+.step-card h3 {
+  margin: 0 0 10px;
+  font: 700 22px/1.22 var(--fb);
+  color: var(--ink);
+  letter-spacing: -0.015em;
+}
+
+.step-tagline {
+  margin: 0 0 10px;
+  font: 700 15px/1.38 var(--fb);
   color: var(--ink);
 }
 
-.steps4 .tg {
-  margin: 0;
-  font: 400 17px/1.3 var(--fd);
+.step-desc {
+  margin: 0 0 20px;
+  font: 400 14px/1.52 var(--fb);
+  color: var(--tx);
+}
+
+.step-pills {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.step-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4.5px 12px;
+  border-radius: 9999px;
+  border: 1px solid #94a3b8;
+  background: #f8fafc;
+  font: 600 12.5px var(--fb);
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+[data-theme="dark"] .step-pill {
+  background: rgba(138, 168, 238, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.step-pill.featured {
+  background: #e2e8f0;
+  border-color: #64748b;
+}
+
+[data-theme="dark"] .step-pill.featured {
+  background: rgba(138, 168, 238, 0.22);
+  border-color: rgba(138, 168, 238, 0.45);
+}
+
+.step-pill-icon {
+  font-size: 10px;
+  color: var(--ink);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.step-stage {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font: 700 14px var(--fb);
+  color: var(--ink);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color .2s ease;
+}
+
+.step-stage:hover {
   color: var(--bl);
 }
 
-.steps4 p {
-  margin: 0;
-  font-size: 15.5px;
-  color: var(--mu);
-}
-
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .steps4 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .steps4>div:nth-child(3) {
-    border-left: 0;
-  }
-
-  .steps4>div:nth-child(n+3) {
-    border-top: 1px solid var(--line-2);
-  }
-
-  .steps4>div::after {
-    display: none;
+    gap: 16px;
   }
 
   .appr {
@@ -3425,18 +3525,10 @@ footer.site .links a:hover {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
   .steps4 {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .steps4>div {
-    border-left: 0 !important;
-    border-top: 1px solid var(--line-2);
-  }
-
-  .steps4>div:first-child {
-    border-top: 0;
+    gap: 14px;
   }
 }
 
@@ -4253,7 +4345,7 @@ footer.site .links a:hover {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: clamp(24px, 4vw, 56px);
-  align-items: center;
+  align-items: start;
 }
 
 .feat3 {

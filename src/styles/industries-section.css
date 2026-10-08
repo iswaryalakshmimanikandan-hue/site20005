@@ -420,36 +420,36 @@
 .ind-nav-btn {
   appearance: none;
   -webkit-appearance: none;
-  background: var(--paper, #FFFFFF);
-  border: 1.5px solid var(--line-2, #CBD5E1);
+  background: var(--blue, #365CAD);
+  border: 1.5px solid var(--blue, #365CAD);
   border-radius: 0;
-  color: var(--ink, #0F172A);
+  color: #FFFFFF;
   font-family: var(--fb, sans-serif);
   font-size: 13px;
   font-weight: 700;
   padding: 7px 16px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out, color 250ms ease-in-out;
   flex: 1;
   text-align: center;
 }
 
 .ind-nav-btn:hover {
-  background: var(--bl-soft, #EAF0FB);
-  border-color: var(--bl, #365CAD);
-  color: var(--bl, #365CAD);
+  background: var(--or, #F09018);
+  border-color: var(--or, #F09018);
+  color: #FFFFFF;
 }
 
 [data-theme="dark"] .ind-nav-btn {
-  background: var(--paper);
-  border-color: var(--line, rgba(255, 255, 255, 0.14));
-  color: var(--ink);
+  background: var(--blue, #365CAD);
+  border-color: var(--blue, #365CAD);
+  color: #FFFFFF;
 }
 
 [data-theme="dark"] .ind-nav-btn:hover {
-  background: var(--bl-soft, rgba(138, 168, 238, 0.16));
-  border-color: var(--bl, #8AA8EE);
-  color: var(--bl, #8AA8EE);
+  background: var(--or, #F09018);
+  border-color: var(--or, #F09018);
+  color: #FFFFFF;
 }
 
 /* Timer Badge in Navigation Row */
@@ -600,8 +600,9 @@
   gap: 8px;
   width: 100%;
   padding: 12px 18px;
-  background: var(--bl, #2A51BF);
-  color: #FFFFFF;
+  background: var(--blue, #365CAD);
+  border: 1.5px solid var(--blue, #365CAD);
+  color: #FFFFFF !important;
   text-decoration: none;
   border-radius: 0;
   font-family: var(--fb, sans-serif);
@@ -609,16 +610,17 @@
   font-weight: 700;
   letter-spacing: -0.01em;
   text-align: center;
-  box-shadow: 2px 2px 0 #18357A;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out, color 250ms ease-in-out, transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
   box-sizing: border-box;
 }
 
 .ind-cta-btn:hover {
-  background: #2343a0;
-  color: #FFFFFF;
+  background: var(--or, #F09018) !important;
+  border-color: var(--or, #F09018) !important;
+  color: #FFFFFF !important;
   transform: translateY(-1px);
-  box-shadow: 3px 3px 0 #18357A;
+  box-shadow: 3px 3px 0 var(--ink);
 }
 
 .ind-cta-btn:active {
@@ -626,9 +628,17 @@
 }
 
 [data-theme="dark"] .ind-cta-btn {
-  background: var(--bl, #8AA8EE);
-  color: #0F172A;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  background: var(--blue, #365CAD);
+  border-color: var(--blue, #365CAD);
+  color: #FFFFFF !important;
+  box-shadow: 2px 2px 0 #FFFFFF;
+}
+
+[data-theme="dark"] .ind-cta-btn:hover {
+  background: var(--or, #F09018) !important;
+  border-color: var(--or, #F09018) !important;
+  color: #FFFFFF !important;
+  box-shadow: 3px 3px 0 #FFFFFF;
 }
 
 /* --------------------------------------------------------------------------

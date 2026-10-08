@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const sections = [
   { id: 'hero', title: 'Home' },
@@ -19,6 +19,8 @@ const sections = [
 
 export default function SectionDots() {
   const [activeSection, setActiveSection] = useState('hero');
+  const [isRevealed, setIsRevealed] = useState(false);
+  const leaveTimerRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -40,14 +42,50 @@ export default function SectionDots() {
     return () => observer.disconnect();
   }, []);
 
+  const handleMouseEnter = () => {
+    if (leaveTimerRef.current) {
+      clearTimeout(leaveTimerRef.current);
+      leaveTimerRef.current = null;
+    }
+    setIsRevealed(true);
+  };
+
+  const handleMouseLeave = () => {
+    leaveTimerRef.current = setTimeout(() => {
+      setIsRevealed(false);
+    }, 150);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (leaveTimerRef.current) clearTimeout(leaveTimerRef.current);
+    };
+  }, []);
+
+  const handleClick = (e, id) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', `#${id}`);
+      setActiveSection(id);
+    }
+  };
+
   return (
-    <nav className="dots" aria-label="Sections">
+    <nav
+      className={`dots ${isRevealed ? 'is-revealed' : ''}`}
+      aria-label="Sections"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       {sections.map(({ id, title }) => (
         <a
           key={id}
           href={`#${id}`}
           title={title}
           aria-current={activeSection === id ? 'true' : undefined}
+          onClick={(e) => handleClick(e, id)}
         >
           <small>{title}</small>
           <i></i>

@@ -339,10 +339,10 @@
 .hwb-btn-prev {
   appearance: none;
   -webkit-appearance: none;
-  background: var(--paper);
-  border: 1.5px solid var(--line-2, #CBD5E1);
+  background: var(--blue, #365cad);
+  border: 1.5px solid var(--blue, #365cad);
   border-radius: 0;
-  color: var(--ink);
+  color: #FFFFFF;
   font-family: var(--fb);
   font-size: 13.5px;
   font-weight: 700;
@@ -351,31 +351,32 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: all 0.2s ease;
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out, color 250ms ease-in-out;
 }
 
 .hwb-btn-prev:hover {
-  border-color: var(--bl, #365cad);
-  background: var(--bl-soft, #EAF0FB);
-  color: var(--bl, #365cad);
+  border-color: var(--or, #F09018);
+  background: var(--or, #F09018);
+  color: #FFFFFF;
 }
 
 [data-theme="dark"] .hwb-btn-prev {
-  background: var(--paper);
-  border-color: var(--line);
-  color: var(--ink);
+  background: var(--blue, #365cad);
+  border-color: var(--blue, #365cad);
+  color: #FFFFFF;
 }
 
 [data-theme="dark"] .hwb-btn-prev:hover {
-  border-color: var(--bl, #8aa8ee);
-  color: var(--bl, #8aa8ee);
+  border-color: var(--or, #F09018);
+  background: var(--or, #F09018);
+  color: #FFFFFF;
 }
 
 .hwb-btn-next {
   appearance: none;
   -webkit-appearance: none;
-  background: var(--bl, #365cad);
-  border: 1.5px solid var(--bl, #365cad);
+  background: var(--blue, #365cad);
+  border: 1.5px solid var(--blue, #365cad);
   border-radius: 0;
   color: #FFFFFF !important;
   font-family: var(--fb);
@@ -386,25 +387,29 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: all 0.2s ease;
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out, color 250ms ease-in-out, box-shadow 250ms ease-in-out, transform 250ms ease-in-out;
   box-shadow: 2px 2px 0 var(--ink);
 }
 
 .hwb-btn-next:hover {
-  background: #2b4c91;
+  background: var(--or, #F09018) !important;
+  border-color: var(--or, #F09018) !important;
+  color: #FFFFFF !important;
   box-shadow: 3px 3px 0 var(--ink);
   transform: translate(-1px, -1px);
 }
 
 [data-theme="dark"] .hwb-btn-next {
-  background: var(--bl, #8aa8ee);
-  border-color: var(--bl, #8aa8ee);
-  color: #0E1220 !important;
+  background: var(--blue, #365cad);
+  border-color: var(--blue, #365cad);
+  color: #FFFFFF !important;
   box-shadow: 2px 2px 0 #FFFFFF;
 }
 
 [data-theme="dark"] .hwb-btn-next:hover {
-  background: #a4beff;
+  background: var(--or, #F09018) !important;
+  border-color: var(--or, #F09018) !important;
+  color: #FFFFFF !important;
   box-shadow: 3px 3px 0 #FFFFFF;
 }
 
@@ -533,35 +538,39 @@
   gap: 6px;
   padding: 8px 18px;
   border-radius: 0;
-  border: 1.5px solid var(--bl, #365cad);
-  background: var(--paper);
-  color: var(--bl, #365cad) !important;
+  border: 1.5px solid var(--blue, #365cad);
+  background: var(--blue, #365cad);
+  color: #FFFFFF !important;
   font-family: var(--fb);
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
   white-space: nowrap;
-  transition: all 0.2s ease;
+  transition: background-color 250ms ease-in-out, border-color 250ms ease-in-out, color 250ms ease-in-out, box-shadow 250ms ease-in-out, transform 250ms ease-in-out;
   flex-shrink: 0;
-  box-shadow: 2px 2px 0 var(--bl, #365cad);
+  box-shadow: 2px 2px 0 var(--ink);
 }
 
 .hwb-banner-cta:hover {
-  background: var(--bl, #365cad);
+  background: var(--or, #F09018) !important;
+  border-color: var(--or, #F09018) !important;
   color: #FFFFFF !important;
+  box-shadow: 3px 3px 0 var(--ink);
   transform: translate(-1px, -1px);
 }
 
 [data-theme="dark"] .hwb-banner-cta {
-  background: var(--paper);
-  border-color: var(--bl, #8aa8ee);
-  color: var(--bl, #8aa8ee) !important;
-  box-shadow: 2px 2px 0 var(--bl, #8aa8ee);
+  background: var(--blue, #365cad);
+  border-color: var(--blue, #365cad);
+  color: #FFFFFF !important;
+  box-shadow: 2px 2px 0 #FFFFFF;
 }
 
 [data-theme="dark"] .hwb-banner-cta:hover {
-  background: var(--bl, #8aa8ee);
-  color: #0E1220 !important;
+  background: var(--or, #F09018) !important;
+  border-color: var(--or, #F09018) !important;
+  color: #FFFFFF !important;
+  box-shadow: 3px 3px 0 #FFFFFF;
 }
 
 /* --------------------------------------------------------------------------

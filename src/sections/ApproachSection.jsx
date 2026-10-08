@@ -1,5 +1,64 @@
 import React from 'react';
 
+const steps = [
+  {
+    num: '01 |',
+    title: 'Understand & strategise',
+    tagline: 'Before we build, we understand.',
+    desc: 'We dive into your business, users, workflows, existing technology and challenges, and define what success looks like.',
+    stage: 'Discovery Stage →',
+    items: [
+      'Business & process discovery',
+      'Requirements & opportunity analysis',
+      'Technology feasibility',
+      'Solution strategy & architecture',
+      'Product roadmap'
+    ]
+  },
+  {
+    num: '02 |',
+    title: 'Design & engineer',
+    tagline: 'Turn the strategy into working technology.',
+    desc: 'Our engineering teams bring the solution to life through focused execution, continuous collaboration and disciplined development.',
+    stage: 'Engineering Stage →',
+    items: [
+      'Product & technical design',
+      'Agile engineering',
+      'AI & automation integration',
+      'API & enterprise integrations',
+      'Continuous testing & QA'
+    ]
+  },
+  {
+    num: '03 |',
+    title: 'Launch & operationalise',
+    tagline: 'Software creates value when people can rely on it.',
+    desc: 'We take solutions beyond development into real-world operation, with the infrastructure, security and support needed for production.',
+    stage: 'Operations Stage →',
+    items: [
+      'Deployment & cloud infrastructure',
+      'Production readiness',
+      'Security & performance',
+      'Monitoring & observability',
+      'User adoption & support'
+    ]
+  },
+  {
+    num: '04 |',
+    title: 'Scale & evolve',
+    tagline: "The launch isn't the finish line.",
+    desc: 'As your business grows, we stay involved to improve performance, expand capabilities, integrate new systems and identify what’s next.',
+    stage: 'Expansion Stage →',
+    items: [
+      'Continuous improvement',
+      'Product & feature evolution',
+      'Performance optimisation',
+      'New integrations & capabilities',
+      'Long-term advisory'
+    ]
+  }
+];
+
 export default function ApproachSection() {
   return (
     <section className="sec" id="approach" aria-labelledby="h-appr">
@@ -21,7 +80,7 @@ export default function ApproachSection() {
           </div>
           <figure className="rv in">
             <img
-              src="/assets/img/approach_engineer.png"
+              src="/assets/img/approach_engineer.svg"
               alt="An engineer at a dual-monitor workstation"
               loading="lazy"
               width="1200"
@@ -31,61 +90,28 @@ export default function ApproachSection() {
         </div>
 
         <div className="steps4">
-          <div className="rv in" style={{ '--d': 0 }}>
-            <span className="num">01</span>
-            <h3>Understand & strategise</h3>
-            <p className="tg">Before we build, we understand.</p>
-            <p>We dive into your business, users, workflows, existing technology and challenges, and define what success looks like.</p>
-            <ul className="list" style={{ display: 'flex', flexDirection: 'column', gap: 6, paddingTop: 12, borderTop: '1px solid var(--line)' }}>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Business &amp; process discovery</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Requirements &amp; opportunity analysis</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Technology feasibility</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Solution strategy &amp; architecture</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Product roadmap</li>
-            </ul>
-          </div>
-
-          <div className="rv in" style={{ '--d': 1 }}>
-            <span className="num">02</span>
-            <h3>Design & engineer</h3>
-            <p className="tg">Turn the strategy into working technology.</p>
-            <p>Our engineering teams bring the solution to life through focused execution, continuous collaboration and disciplined development.</p>
-            <ul className="list" style={{ display: 'flex', flexDirection: 'column', gap: 6, paddingTop: 12, borderTop: '1px solid var(--line)' }}>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Product &amp; technical design</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Agile engineering</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>AI &amp; automation integration</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>API &amp; enterprise integrations</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Continuous testing &amp; QA</li>
-            </ul>
-          </div>
-
-          <div className="rv in" style={{ '--d': 2 }}>
-            <span className="num">03</span>
-            <h3>Launch & operationalise</h3>
-            <p className="tg">Software creates value when people can rely on it.</p>
-            <p>We take solutions beyond development into real-world operation, with the infrastructure, security and support needed for production.</p>
-            <ul className="list" style={{ display: 'flex', flexDirection: 'column', gap: 6, paddingTop: 12, borderTop: '1px solid var(--line)' }}>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Deployment &amp; cloud infrastructure</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Production readiness</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Security &amp; performance</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Monitoring &amp; observability</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>User adoption &amp; support</li>
-            </ul>
-          </div>
-
-          <div className="rv in" style={{ '--d': 3 }}>
-            <span className="num">04</span>
-            <h3>Scale & evolve</h3>
-            <p className="tg">The launch isn’t the finish line.</p>
-            <p>As your business grows, we stay involved to improve performance, expand capabilities, integrate new systems and identify what’s next.</p>
-            <ul className="list" style={{ display: 'flex', flexDirection: 'column', gap: 6, paddingTop: 12, borderTop: '1px solid var(--line)' }}>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Continuous improvement</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Product &amp; feature evolution</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Performance optimisation</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>New integrations &amp; capabilities</li>
-              <li style={{ display: 'flex', gap: 10, fontSize: 15 }}><span aria-hidden="true" style={{ color: 'var(--bl)' }}>+</span>Long-term advisory</li>
-            </ul>
-          </div>
+          {steps.map((st, i) => (
+            <div key={st.num} className="step-card rv in" style={{ '--d': i }}>
+              <span className="step-badge">{st.num}</span>
+              <h3>{st.title}</h3>
+              <p className="step-tagline">{st.tagline}</p>
+              <p className="step-desc">{st.desc}</p>
+              <div className="step-pills">
+                {st.items.map((item, idx) => (
+                  <span
+                    key={idx}
+                    className={`step-pill ${i === 0 && idx === 1 ? 'featured' : ''}`}
+                  >
+                    <span className="step-pill-icon" aria-hidden="true">✦</span>
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <a href="#how-we-build" className="step-stage">
+                {st.stage}
+              </a>
+            </div>
+          ))}
         </div>
       </div>
     </section>

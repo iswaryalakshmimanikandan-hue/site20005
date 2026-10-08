@@ -89,7 +89,7 @@ export default function ArticleDetailPage() {
               <div className="box2" style={{ background: 'var(--ink)', color: 'var(--bg)', borderColor: 'var(--ink)' }}>
                 <small style={{ color: 'var(--or)' }}>Got a problem worth solving?</small>
                 <span style={{ font: '700 19px/1.25 var(--fd)' }}>Let’s talk about what this could mean for your business.</span>
-                <a className="btn btn-or sm" href="/#contact" style={{ color: '#15161C', border: 0, padding: '0 16px', justifyContent: 'center' }}>
+                <a className="btn sm" href="/#contact" style={{ padding: '0 16px', justifyContent: 'center' }}>
                   Let’s build together →
                 </a>
               </div>

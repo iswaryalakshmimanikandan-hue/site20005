@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="wrap">
         <div className="cols">
           <div className="brand">
-            <img src="/assets/logo-light-text.webp" width="120" height="56" alt="AskJuno" />
+            <img src="/assets/logo-light-text.svg" width="120" height="56" alt="AskJuno" />
             <p>Enterprise AI and intelligent automation, responsibly built for modern engineering.</p>
           </div>
           <div>

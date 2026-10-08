@@ -23,20 +23,20 @@ const steps = [
         <polygon points="160,47 166,50 160,53" fill="#365CAD"/>
 
         <rect x="166" y="20" width="100" height="60" fill="#EAF0FB" stroke="#365CAD" strokeWidth="1.5"/>
-        <text x="216" y="44" textAnchor="middle" fill="#365CAD" fontSize="12" fontWeight="800" fontFamily="sans-serif">Strategic</text>
-        <text x="216" y="60" textAnchor="middle" fill="#365CAD" fontSize="11" fontWeight="700" fontFamily="sans-serif">Roadmap</text>
+        <text x="216" y="44" textAnchor="middle" fill="#365CAD" fontSize="12" fontWeight="800" fontFamily="Carlito, sans-serif">Strategic</text>
+        <text x="216" y="60" textAnchor="middle" fill="#365CAD" fontSize="11" fontWeight="700" fontFamily="Carlito, sans-serif">Roadmap</text>
 
         <path d="M216 80 L216 110" stroke="#365CAD" strokeWidth="1.5"/>
         <polygon points="213,110 216,116 219,110" fill="#365CAD"/>
 
         <rect x="150" y="116" width="130" height="65" fill="#FFFFFF" stroke="#365CAD" strokeWidth="1.5"/>
         <rect x="162" y="128" width="22" height="14" fill="#10B981" opacity="0.2"/>
-        <text x="173" y="139" textAnchor="middle" fill="#10B981" fontSize="9" fontWeight="800" fontFamily="sans-serif">M1</text>
-        <text x="192" y="139" fill="#1E293B" fontSize="10.5" fontWeight="700" fontFamily="sans-serif">Technical Audit</text>
+        <text x="173" y="139" textAnchor="middle" fill="#10B981" fontSize="9" fontWeight="800" fontFamily="Carlito, sans-serif">M1</text>
+        <text x="192" y="139" fill="#1E293B" fontSize="10.5" fontWeight="700" fontFamily="Carlito, sans-serif">Technical Audit</text>
 
         <rect x="162" y="148" width="22" height="14" fill="#365CAD" opacity="0.15"/>
-        <text x="173" y="159" textAnchor="middle" fill="#365CAD" fontSize="9" fontWeight="800" fontFamily="sans-serif">M2</text>
-        <text x="192" y="159" fill="#1E293B" fontSize="10.5" fontWeight="700" fontFamily="sans-serif">Architecture Scope</text>
+        <text x="173" y="159" textAnchor="middle" fill="#365CAD" fontSize="9" fontWeight="800" fontFamily="Carlito, sans-serif">M2</text>
+        <text x="192" y="159" fill="#1E293B" fontSize="10.5" fontWeight="700" fontFamily="Carlito, sans-serif">Architecture Scope</text>
 
         <rect x="290" y="55" width="75" height="90" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="1.2"/>
         <rect x="298" y="66" width="58" height="6" fill="#365CAD" opacity="0.7"/>
@@ -90,8 +90,8 @@ const steps = [
         <rect x="254" y="47" width="30" height="4" fill="#CBD5E1"/>
 
         {/* Central Bold Heading */}
-        <text x="210" y="88" textAnchor="middle" fill="#0F172A" fontSize="15" fontWeight="800" fontFamily="sans-serif">Design &amp;</text>
-        <text x="210" y="106" textAnchor="middle" fill="#0F172A" fontSize="15" fontWeight="800" fontFamily="sans-serif">Architecture</text>
+        <text x="210" y="88" textAnchor="middle" fill="#0F172A" fontSize="15" fontWeight="800" fontFamily="Carlito, sans-serif">Design &amp;</text>
+        <text x="210" y="106" textAnchor="middle" fill="#0F172A" fontSize="15" fontWeight="800" fontFamily="Carlito, sans-serif">Architecture</text>
 
         {/* Bottom Left UI Card with X image placeholder (Square box) */}
         <rect x="22" y="98" width="85" height="78" fill="#FFFFFF" stroke="#365CAD" strokeWidth="1.3"/>
@@ -148,33 +148,33 @@ const steps = [
         <rect x="30" y="24" width="6" height="6" fill="#EF4444"/>
         <rect x="40" y="24" width="6" height="6" fill="#F59E0B"/>
         <rect x="50" y="24" width="6" height="6" fill="#10B981"/>
-        <text x="70" y="30" fill="#365CAD" fontSize="9" fontWeight="700" fontFamily="monospace">api_service.ts</text>
+        <text x="70" y="30" fill="#365CAD" fontSize="9" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">api_service.ts</text>
         <line x1="20" y1="36" x2="200" y2="36" stroke="#E2E8F0" strokeWidth="1"/>
 
-        <text x="32" y="56" fill="#365CAD" fontSize="10" fontWeight="700" fontFamily="monospace">export const</text>
-        <text x="110" y="56" fill="#0F172A" fontSize="10" fontWeight="700" fontFamily="monospace">service</text>
-        <text x="32" y="74" fill="#64748B" fontSize="9.5" fontFamily="monospace">  const auth = await token();</text>
-        <text x="32" y="90" fill="#10B981" fontSize="9.5" fontWeight="600" fontFamily="monospace">  return orchestrate(auth);</text>
-        <text x="32" y="106" fill="#64748B" fontSize="9.5" fontFamily="monospace">&#125;;</text>
+        <text x="32" y="56" fill="#365CAD" fontSize="10" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">export const</text>
+        <text x="110" y="56" fill="#0F172A" fontSize="10" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">service</text>
+        <text x="32" y="74" fill="#64748B" fontSize="9.5" fontFamily="'IBM Plex Mono', monospace">  const auth = await token();</text>
+        <text x="32" y="90" fill="#10B981" fontSize="9.5" fontWeight="600" fontFamily="'IBM Plex Mono', monospace">  return orchestrate(auth);</text>
+        <text x="32" y="106" fill="#64748B" fontSize="9.5" fontFamily="'IBM Plex Mono', monospace">&#125;;</text>
         <rect x="32" y="114" width="70" height="3" fill="#365CAD" opacity="0.3"/>
 
         <path d="M200 74 L235 74" stroke="#365CAD" strokeWidth="1.5"/>
         <polygon points="235,71 241,74 235,77" fill="#365CAD"/>
 
         <rect x="241" y="35" width="120" height="75" fill="#EAF0FB" stroke="#365CAD" strokeWidth="1.5"/>
-        <text x="253" y="54" fill="#0F172A" fontSize="11" fontWeight="800" fontFamily="sans-serif">Git Branch Flow</text>
+        <text x="253" y="54" fill="#0F172A" fontSize="11" fontWeight="800" fontFamily="Carlito, sans-serif">Git Branch Flow</text>
         <rect x="256" y="68" width="8" height="8" fill="#365CAD"/>
         <line x1="264" y1="72" x2="294" y2="72" stroke="#365CAD" strokeWidth="2"/>
         <rect x="296" y="68" width="8" height="8" fill="#10B981"/>
         <line x1="304" y1="72" x2="334" y2="72" stroke="#10B981" strokeWidth="2"/>
         <rect x="336" y="68" width="8" height="8" fill="#10B981"/>
-        <text x="253" y="94" fill="#64748B" fontSize="9" fontFamily="monospace">main: 0 conflicts</text>
+        <text x="253" y="94" fill="#64748B" fontSize="9" fontFamily="'IBM Plex Mono', monospace">main: 0 conflicts</text>
 
         <rect x="40" y="145" width="300" height="38" fill="#ECFDF5" stroke="#10B981" strokeWidth="1.5"/>
         <rect x="56" y="157" width="14" height="14" fill="#10B981"/>
         <path d="M59 164 L62 167 L67 161" stroke="#FFFFFF" strokeWidth="1.5"/>
-        <text x="78" y="168" fill="#065F46" fontSize="11" fontWeight="800" fontFamily="sans-serif">TEST SUITE: 100% PASSING</text>
-        <text x="245" y="168" fill="#047857" fontSize="10" fontFamily="monospace">coverage 98.4%</text>
+        <text x="78" y="168" fill="#065F46" fontSize="11" fontWeight="800" fontFamily="Carlito, sans-serif">TEST SUITE: 100% PASSING</text>
+        <text x="245" y="168" fill="#047857" fontSize="10" fontFamily="'IBM Plex Mono', monospace">coverage 98.4%</text>
       </svg>
     )
   },
@@ -189,35 +189,35 @@ const steps = [
     renderDiagram: () => (
       <svg viewBox="0 0 380 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="hwb-schematic-svg">
         <rect x="25" y="25" width="75" height="48" fill="#FFFFFF" stroke="#365CAD" strokeWidth="1.3"/>
-        <text x="62" y="46" textAnchor="middle" fill="#1E293B" fontSize="10" fontWeight="700" fontFamily="sans-serif">Build</text>
-        <text x="62" y="60" textAnchor="middle" fill="#10B981" fontSize="9" fontWeight="700" fontFamily="monospace">✓ verified</text>
+        <text x="62" y="46" textAnchor="middle" fill="#1E293B" fontSize="10" fontWeight="700" fontFamily="Carlito, sans-serif">Build</text>
+        <text x="62" y="60" textAnchor="middle" fill="#10B981" fontSize="9" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">✓ verified</text>
 
         <path d="M100 49 L125 49" stroke="#365CAD" strokeWidth="1.5"/>
         <polygon points="125,46 131,49 125,52" fill="#365CAD"/>
 
         <rect x="131" y="25" width="75" height="48" fill="#FFFFFF" stroke="#365CAD" strokeWidth="1.3"/>
-        <text x="168" y="46" textAnchor="middle" fill="#1E293B" fontSize="10" fontWeight="700" fontFamily="sans-serif">Security Scan</text>
-        <text x="168" y="60" textAnchor="middle" fill="#10B981" fontSize="9" fontWeight="700" fontFamily="monospace">0 CVEs</text>
+        <text x="168" y="46" textAnchor="middle" fill="#1E293B" fontSize="10" fontWeight="700" fontFamily="Carlito, sans-serif">Security Scan</text>
+        <text x="168" y="60" textAnchor="middle" fill="#10B981" fontSize="9" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">0 CVEs</text>
 
         <path d="M206 49 L231 49" stroke="#365CAD" strokeWidth="1.5"/>
         <polygon points="231,46 237,49 231,52" fill="#365CAD"/>
 
         <rect x="237" y="25" width="85" height="48" fill="#EAF0FB" stroke="#365CAD" strokeWidth="1.5"/>
-        <text x="279" y="46" textAnchor="middle" fill="#365CAD" fontSize="10.5" fontWeight="800" fontFamily="sans-serif">Zero Downtime</text>
-        <text x="279" y="60" textAnchor="middle" fill="#10B981" fontSize="9" fontWeight="700" fontFamily="monospace">Rolling pod</text>
+        <text x="279" y="46" textAnchor="middle" fill="#365CAD" fontSize="10.5" fontWeight="800" fontFamily="Carlito, sans-serif">Zero Downtime</text>
+        <text x="279" y="60" textAnchor="middle" fill="#10B981" fontSize="9" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">Rolling pod</text>
 
         <rect x="40" y="95" width="290" height="85" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="1.3"/>
         <rect x="52" y="106" width="75" height="20" fill="#EAF0FB" stroke="#365CAD" strokeWidth="1"/>
         <rect x="58" y="113" width="6" height="6" fill="#10B981"/>
-        <text x="68" y="120" fill="#365CAD" fontSize="9" fontWeight="800" fontFamily="sans-serif">PROD LIVE</text>
+        <text x="68" y="120" fill="#365CAD" fontSize="9" fontWeight="800" fontFamily="Carlito, sans-serif">PROD LIVE</text>
 
-        <text x="52" y="145" fill="#64748B" fontSize="10" fontFamily="sans-serif">Cluster: AWS us-east-1</text>
-        <text x="52" y="162" fill="#64748B" fontSize="10" fontFamily="sans-serif">Container: Kubernetes v1.30</text>
+        <text x="52" y="145" fill="#64748B" fontSize="10" fontFamily="Carlito, sans-serif">Cluster: AWS us-east-1</text>
+        <text x="52" y="162" fill="#64748B" fontSize="10" fontFamily="Carlito, sans-serif">Container: Kubernetes v1.30</text>
 
         <g transform="translate(240, 105)">
           <rect x="10" y="10" width="50" height="50" fill="#EAF0FB" stroke="#10B981" strokeWidth="1.5"/>
-          <text x="35" y="32" textAnchor="middle" fill="#0F172A" fontSize="11" fontWeight="800" fontFamily="sans-serif">99.9%</text>
-          <text x="35" y="46" textAnchor="middle" fill="#10B981" fontSize="9" fontWeight="700" fontFamily="monospace">UPTIME</text>
+          <text x="35" y="32" textAnchor="middle" fill="#0F172A" fontSize="11" fontWeight="800" fontFamily="Carlito, sans-serif">99.9%</text>
+          <text x="35" y="46" textAnchor="middle" fill="#10B981" fontSize="9" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">UPTIME</text>
         </g>
       </svg>
     )
@@ -233,26 +233,26 @@ const steps = [
     renderDiagram: () => (
       <svg viewBox="0 0 380 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="hwb-schematic-svg">
         <rect x="20" y="20" width="105" height="60" fill="#FFFFFF" stroke="#365CAD" strokeWidth="1.3"/>
-        <text x="32" y="38" fill="#64748B" fontSize="10" fontWeight="700" fontFamily="sans-serif">Uptime SLA</text>
-        <text x="32" y="62" fill="#10B981" fontSize="18" fontWeight="800" fontFamily="sans-serif">99.99%</text>
+        <text x="32" y="38" fill="#64748B" fontSize="10" fontWeight="700" fontFamily="Carlito, sans-serif">Uptime SLA</text>
+        <text x="32" y="62" fill="#10B981" fontSize="18" fontWeight="800" fontFamily="Carlito, sans-serif">99.99%</text>
 
         <rect x="135" y="20" width="105" height="60" fill="#FFFFFF" stroke="#365CAD" strokeWidth="1.3"/>
-        <text x="147" y="38" fill="#64748B" fontSize="10" fontWeight="700" fontFamily="sans-serif">Latency</text>
-        <text x="147" y="62" fill="#365CAD" fontSize="18" fontWeight="800" fontFamily="sans-serif">&lt; 38ms</text>
+        <text x="147" y="38" fill="#64748B" fontSize="10" fontWeight="700" fontFamily="Carlito, sans-serif">Latency</text>
+        <text x="147" y="62" fill="#365CAD" fontSize="18" fontWeight="800" fontFamily="Carlito, sans-serif">&lt; 38ms</text>
 
         <rect x="250" y="20" width="105" height="60" fill="#FFFFFF" stroke="#365CAD" strokeWidth="1.3"/>
-        <text x="262" y="38" fill="#64748B" fontSize="10" fontWeight="700" fontFamily="sans-serif">Active Nodes</text>
-        <text x="262" y="62" fill="#0F172A" fontSize="18" fontWeight="800" fontFamily="sans-serif">12 / 12</text>
+        <text x="262" y="38" fill="#64748B" fontSize="10" fontWeight="700" fontFamily="Carlito, sans-serif">Active Nodes</text>
+        <text x="262" y="62" fill="#0F172A" fontSize="18" fontWeight="800" fontFamily="Carlito, sans-serif">12 / 12</text>
 
         <rect x="20" y="94" width="335" height="85" fill="#FFFFFF" stroke="#CBD5E1" strokeWidth="1.3"/>
-        <text x="34" y="112" fill="#1E293B" fontSize="10.5" fontWeight="700" fontFamily="sans-serif">Real-time Telemetry &amp; Auto-scale Curve</text>
+        <text x="34" y="112" fill="#1E293B" fontSize="10.5" fontWeight="700" fontFamily="Carlito, sans-serif">Real-time Telemetry &amp; Auto-scale Curve</text>
         
         <path d="M35 155 Q 90 150, 140 135 T 240 120 T 330 110" stroke="#365CAD" strokeWidth="2.5" fill="none"/>
         <path d="M35 155 Q 90 150, 140 135 T 240 120 T 330 110 L 330 165 L 35 165 Z" fill="#EAF0FB" opacity="0.6"/>
         
         <rect x="236" y="116" width="8" height="8" fill="#365CAD"/>
         <rect x="220" y="100" width="40" height="14" fill="#365CAD"/>
-        <text x="240" y="110" textAnchor="middle" fill="#FFFFFF" fontSize="8" fontWeight="700" fontFamily="sans-serif">PEAK</text>
+        <text x="240" y="110" textAnchor="middle" fill="#FFFFFF" fontSize="8" fontWeight="700" fontFamily="Carlito, sans-serif">PEAK</text>
       </svg>
     )
   }

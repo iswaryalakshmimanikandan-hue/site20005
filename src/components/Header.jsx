@@ -53,8 +53,8 @@ export default function Header() {
       <header className="top">
         <div className="wrap">
           <Link to="/" className="logo" aria-label="AskJuno home">
-            <img className="lg-l" src="/assets/logo-dark-text.webp" width="112" height="52" alt="AskJuno" />
-            <img className="lg-d" src="/assets/logo-light-text.webp" width="112" height="52" alt="AskJuno" />
+            <img className="lg-l" src="/assets/logo-dark-text.svg" width="112" height="52" alt="AskJuno" />
+            <img className="lg-d" src="/assets/logo-light-text.svg" width="112" height="52" alt="AskJuno" />
           </Link>
 
           <nav className="nav" aria-label="Main" ref={navRef}>
