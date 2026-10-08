@@ -233,8 +233,6 @@ export default function IndustriesSection() {
     [clearTimer]
   );
 
-  const prev = () => handleManualSelect((activeTab - 1 + industries.length) % industries.length);
-  const next = () => handleManualSelect((activeTab + 1) % industries.length);
 
   const cur = industries[activeTab];
   const barDur = isManual ? '30s' : '10s';
@@ -245,12 +243,9 @@ export default function IndustriesSection() {
         {/* Split Section Header */}
         <div className="ind-header-split">
           <div className="ind-header-left">
-            <div className="ind-badge">
-              <span aria-hidden="true">—</span>
-              <span>INDUSTRIES WE TRANSFORM</span>
-            </div>
+            <p className="eyebrow">Industries</p>
             <h2 id="h-ind" className="ind-title">
-              Built for the Way Your<br />Industry Operates.
+              Built for the Way Your<br />Industry <em>Operates.</em>
             </h2>
           </div>
           <p className="ind-lead">
@@ -330,28 +325,6 @@ export default function IndustriesSection() {
                   ))}
                 </ul>
 
-                <div className="ind-subcol-nav">
-                  <button
-                    type="button"
-                    className="ind-nav-btn"
-                    onClick={prev}
-                    aria-label="Previous industry"
-                  >
-                    ‹ Prev
-                  </button>
-                  <span className="ind-timer-badge" title="Auto-advance rotation timer">
-                    <span className="ind-timer-pulse" aria-hidden="true" />
-                    <span>{isManual ? '30s hold' : '10s auto'}</span>
-                  </span>
-                  <button
-                    type="button"
-                    className="ind-nav-btn"
-                    onClick={next}
-                    aria-label="Next industry"
-                  >
-                    Next ›
-                  </button>
-                </div>
               </div>
 
               {/* Subcolumn 2: Solutions We Build, Outcomes, CTA Button */}

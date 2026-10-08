@@ -44,12 +44,12 @@
   border: 1.5px solid var(--line-2, #DBE2EA);
   border-radius: 0;
   padding: 6px 10px;
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.04);
+  box-shadow: none;
 }
 
 [data-theme="dark"] .people-controls {
   border-color: var(--line, rgba(255, 255, 255, 0.14));
-  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: none;
 }
 
 .people-counter {
@@ -165,7 +165,7 @@
 
 .people-page-grid .pcard:hover {
   border-color: var(--bl, #365cad);
-  box-shadow: 0 6px 18px -4px rgba(54, 92, 173, 0.12);
+  box-shadow: none;
   transform: translateY(-2px);
 }
 
@@ -175,7 +175,7 @@
 
 [data-theme="dark"] .people-page-grid .pcard:hover {
   border-color: var(--bl, #8aa8ee);
-  box-shadow: 0 6px 18px -4px rgba(0, 0, 0, 0.5);
+  box-shadow: none;
 }
 
 .people-page-grid .pcard figure {

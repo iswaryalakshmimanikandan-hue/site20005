@@ -618,10 +618,6 @@ export default function ProductsSection() {
                   <polyline points="5 12 12 5 19 12" />
                 </svg>
               </button>
-              <span className="prod-timer-badge" title="Auto-advance rotation timer">
-                <span className="prod-timer-pulse" aria-hidden="true" />
-                <span>{isManual ? '30s hold' : '10s auto'}</span>
-              </span>
               <button
                 type="button"
                 className="prod-arrow-btn"

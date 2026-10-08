@@ -1,7 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+const insideSteps = [
+  { num: '01', title: 'Own the outcome', desc: 'Take responsibility beyond your assigned task.' },
+  { num: '02', title: 'Challenge respectfully', desc: 'Question ideas. Challenge assumptions. Keep it constructive.' },
+  { num: '03', title: 'Stay curious', desc: 'Keep learning, experimenting and sharing.' },
+  { num: '04', title: 'Trust through accountability', desc: 'Give people room to make decisions, and own them.' },
+  { num: '05', title: 'Help the team win', desc: 'Share knowledge. Support each other. Give credit.' },
+  { num: '06', title: 'Keep improving', desc: 'Every project and process is a chance to get better.' }
+];
 
 export default function PrinciplesSection() {
   const [activeTab, setActiveTab] = useState('clients');
+  const [activeInsideStep, setActiveInsideStep] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveInsideStep(prev => (prev + 1) % insideSteps.length);
+    }, 5000); // 5s timing per step
+
+    return () => clearInterval(timer);
+  }, [activeInsideStep]);
 
   return (
     <section className="sec alt" id="value" aria-labelledby="h-val">
@@ -187,13 +205,20 @@ export default function PrinciplesSection() {
             <p className="eyebrow">Inside AskJuno</p>
             <h3 className="h3" style={{ fontSize: 'clamp(24px,2.4vw,32px)' }}>Great work starts with great people.</h3>
             <p className="small">The way we work with each other shapes the way we work with our customers. Our workplace values help us stay humble, grow together and do our best work.</p>
-            <ol>
-              <li><span className="num">01</span><span><b>Own the outcome</b><span>Take responsibility beyond your assigned task.</span></span></li>
-              <li><span className="num">02</span><span><b>Challenge respectfully</b><span>Question ideas. Challenge assumptions. Keep it constructive.</span></span></li>
-              <li><span className="num">03</span><span><b>Stay curious</b><span>Keep learning, experimenting and sharing.</span></span></li>
-              <li><span className="num">04</span><span><b>Trust through accountability</b><span>Give people room to make decisions, and own them.</span></span></li>
-              <li><span className="num">05</span><span><b>Help the team win</b><span>Share knowledge. Support each other. Give credit.</span></span></li>
-              <li><span className="num">06</span><span><b>Keep improving</b><span>Every project and process is a chance to get better.</span></span></li>
+            <ol className="inside-list">
+              {insideSteps.map((step, idx) => (
+                <li
+                  key={step.num}
+                  className={`inside-step ${activeInsideStep === idx ? 'active' : ''}`}
+                  onClick={() => setActiveInsideStep(idx)}
+                >
+                  <span className="num">{step.num}</span>
+                  <span>
+                    <b>{step.title}</b>
+                    <span>{step.desc}</span>
+                  </span>
+                </li>
+              ))}
             </ol>
           </div>
         </div>

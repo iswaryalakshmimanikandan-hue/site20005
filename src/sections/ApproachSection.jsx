@@ -92,17 +92,16 @@ export default function ApproachSection() {
         <div className="steps4">
           {steps.map((st, i) => (
             <div key={st.num} className="step-card rv in" style={{ '--d': i }}>
-              <span className="step-badge">{st.num}</span>
-              <h3>{st.title}</h3>
-              <p className="step-tagline">{st.tagline}</p>
-              <p className="step-desc">{st.desc}</p>
+              <div className="step-card-top">
+                <span className="step-badge">{st.num}</span>
+                <h3>{st.title}</h3>
+                <p className="step-tagline">{st.tagline}</p>
+                <p className="step-desc">{st.desc}</p>
+              </div>
               <div className="step-pills">
                 {st.items.map((item, idx) => (
-                  <span
-                    key={idx}
-                    className={`step-pill ${i === 0 && idx === 1 ? 'featured' : ''}`}
-                  >
-                    <span className="step-pill-icon" aria-hidden="true">✦</span>
+                  <span key={idx} className="step-pill">
+                    <span className="step-pill-icon" aria-hidden="true">•</span>
                     {item}
                   </span>
                 ))}

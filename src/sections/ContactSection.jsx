@@ -46,8 +46,8 @@ export default function ContactSection() {
     const phoneTrim = formData.phone.trim();
     if (phoneTrim) {
       const digits = phoneTrim.replace(/\D/g, '');
-      if (digits.length < 7 || digits.length > 15) {
-        errs.phone = 'Enter a valid phone number (7–15 digits)';
+      if (digits.length < 8 || digits.length > 15) {
+        errs.phone = 'Phone number must be between 8 and 15 digits';
       }
     }
 
@@ -61,6 +61,12 @@ export default function ContactSection() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (name === 'phone') {
+      const digits = value.replace(/\D/g, '');
+      if (digits.length > 15) {
+        return; // Limit entry to maximum 15 digits
+      }
+    }
     setFormData(prev => ({ ...prev, [name]: value }));
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
@@ -165,7 +171,14 @@ export default function ContactSection() {
           <div className="cform2">
             {!isSent ? (
               <form id="contact-form" noValidate onSubmit={handleSubmit} aria-describedby="form-note">
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+                <div className="cform-head">
+                  <h3 className="cform-title">Start a Conversation</h3>
+                  <p className="cform-desc">
+                    Tell us about your team and goals. We'll connect you with an engineering lead within 24 hours.
+                  </p>
+                </div>
+
+                <div className="cform-body">
                   <div className="row2">
                     <div className="field">
                       <label htmlFor="f-name">Name <span className="req" aria-hidden="true">*</span></label>
@@ -178,7 +191,7 @@ export default function ContactSection() {
                         onChange={handleChange}
                         aria-invalid={!!errors.name}
                         aria-describedby={errors.name ? 'err-name' : undefined}
-                        placeholder="Your name"
+                        placeholder="Your full name"
                       />
                       {errors.name && <p className="err" id="err-name">{errors.name}</p>}
                     </div>
@@ -203,17 +216,20 @@ export default function ContactSection() {
 
                   <div className="row2">
                     <div className="field">
-                      <label htmlFor="f-phone">Phone</label>
+                      <label htmlFor="f-phone">
+                        Phone <span className="field-hint">(8–15 digits)</span>
+                      </label>
                       <input
                         id="f-phone"
                         name="phone"
                         type="tel"
                         autoComplete="tel"
+                        maxLength={18}
                         value={formData.phone}
                         onChange={handleChange}
                         aria-invalid={!!errors.phone}
                         aria-describedby={errors.phone ? 'err-phone' : undefined}
-                        placeholder="xxxxxxxxxx"
+                        placeholder="XXXXX XXXXX"
                       />
                       {errors.phone && <p className="err" id="err-phone">{errors.phone}</p>}
                     </div>
@@ -245,7 +261,7 @@ export default function ContactSection() {
                       <option>Book a Consultation</option>
                       <option>Product Demo</option>
                       <option>Enterprise Pricing</option>
-                      <option>Technical Question</option>
+                      <option>Technical Questions</option>
                       <option>Partnership</option>
                     </select>
                     {errors.subject && <p className="err" id="err-subject">{errors.subject}</p>}
@@ -256,22 +272,22 @@ export default function ContactSection() {
                     <textarea
                       id="f-message"
                       name="message"
+                      rows={2}
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell us about your challenge (optional)"
+                      placeholder="Tell us about your challenge or goals (optional)"
                     ></textarea>
                   </div>
 
-                  <p className="small" id="form-note">
-                    <span className="req">*</span> Required. Please use your company email address.
+                  <p className="small cform-note" id="form-note">
+                    <span className="req">*</span> Required fields. Please use your corporate email address.
                   </p>
 
-                  <div className="row">
-                    <button className="btn btn-or" type="submit" disabled={isSubmitting}>
-                      {isSubmitting ? 'Sending…' : 'Book a consultation →'}
+                  <div className="cform-action">
+                    <button className="btn btn-or cform-btn" type="submit" disabled={isSubmitting}>
+                      {isSubmitting ? 'Sending request…' : 'Book a consultation →'}
                     </button>
                   </div>
-
                   {submitError && (
                     <p className="form-msg" id="form-status" role="alert">
                       {submitError}
@@ -289,29 +305,6 @@ export default function ContactSection() {
                 </button>
               </div>
             )}
-          </div>
-        </div>
-
-        <div className="commit4 rv in">
-          <div>
-            <span className="num">01</span>
-            <b>Collaborative by design</b>
-            <p>We work as an extension of your team, with open communication and shared ownership at every stage.</p>
-          </div>
-          <div>
-            <span className="num">02</span>
-            <b>Built for long-term growth</b>
-            <p>Our solutions scale with your business, making it easier to evolve, integrate and innovate as needs change.</p>
-          </div>
-          <div>
-            <span className="num">03</span>
-            <b>Transparent at every step</b>
-            <p>From planning to deployment and support, you always see progress, priorities and next steps.</p>
-          </div>
-          <div>
-            <span className="num">04</span>
-            <b>Focused on real outcomes</b>
-            <p>Every recommendation, feature and release is driven by helping your business operate better and grow with confidence.</p>
           </div>
         </div>
       </div>
