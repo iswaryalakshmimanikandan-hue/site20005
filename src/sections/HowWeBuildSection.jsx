@@ -11,134 +11,95 @@ const steps = [
     chips: ['Business Discovery', 'Requirements Analysis', 'Technical Assessment', 'Solution Roadmap'],
     systemCaption: 'DISCOVERY & STRATEGY SYSTEM',
     renderDiagram: () => (
-      <svg viewBox="0 0 380 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="hwb-schematic-svg">
-        <defs>
-          <linearGradient id="hwb-radar-sweep-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#10B981" stopOpacity="0.35" />
-            <stop offset="100%" stopColor="#10B981" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-
-        {/* Top-Left: Discovery Radar Hub */}
-        <g transform="translate(18, 16)">
-          <rect x="0" y="0" width="134" height="78" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <rect x="0" y="0" width="134" height="20" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <circle cx="10" cy="10" r="3" fill="#10B981" className="hwb-anim-pulse" />
-          <text x="18" y="13.5" fill="var(--hwb-border-primary, #365CAD)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif" letterSpacing="0.04em">01 / DISCOVERY HUB</text>
+      <svg viewBox="0 0 440 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="hwb-schematic-svg">
+        {/* Step 01: Discover & Strategic Roadmap */}
+        {/* Card 1: 01 / AUDIT */}
+        <g transform="translate(16, 14)">
+          <rect x="0" y="0" width="118" height="144" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <rect x="0" y="0" width="118" height="24" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <circle cx="12" cy="12" r="3" fill="#10B981" className="hwb-anim-pulse" />
+          <text x="20" y="15.5" fill="var(--hwb-border-primary)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif" letterSpacing="0.04em">01 / AUDIT</text>
 
           {/* Radar Scanner Graphic */}
-          <g transform="translate(32, 48)">
-            <circle cx="0" cy="0" r="21" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.45" />
-            <circle cx="0" cy="0" r="13" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="0.8" opacity="0.65" />
-            <circle cx="0" cy="0" r="5" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1" />
-            {/* Rotating radar sweep */}
-            <g className="hwb-anim-rotate">
-              <line x1="0" y1="0" x2="21" y2="0" stroke="#10B981" strokeWidth="1.6" />
-              <polygon points="0,0 21,-9 21,0" fill="url(#hwb-radar-sweep-grad)" />
-            </g>
-            {/* Blip dot & Expanding Ping */}
-            <circle cx="7" cy="-7" r="2.5" fill="#10B981" />
-            <circle cx="7" cy="-7" r="2.5" stroke="#10B981" strokeWidth="1" fill="none" className="hwb-anim-ping" />
+          <g transform="translate(59, 58)">
+            <circle cx="0" cy="0" r="18" stroke="var(--hwb-border-primary)" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.45" />
+            <circle cx="0" cy="0" r="10" stroke="var(--hwb-border-primary)" strokeWidth="0.8" opacity="0.7" />
+            <line x1="-22" y1="0" x2="22" y2="0" stroke="var(--hwb-border-subtle)" strokeWidth="0.8" />
+            <line x1="0" y1="-22" x2="0" y2="22" stroke="var(--hwb-border-subtle)" strokeWidth="0.8" />
+            <circle cx="7" cy="-6" r="3" fill="#10B981" />
+            <circle cx="7" cy="-6" r="3" stroke="#10B981" strokeWidth="1" fill="none" className="hwb-anim-ping" />
           </g>
 
-          {/* Discovery checklist tags */}
-          <g transform="translate(64, 26)">
-            <rect x="0" y="3" width="62" height="12" fill="var(--hwb-panel-soft, #EAF0FB)" />
-            <text x="4" y="12" fill="var(--hwb-text-sub, #64748B)" fontSize="7" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">● USER CONTEXT</text>
+          <text x="59" y="94" textAnchor="middle" fill="var(--hwb-text-head)" fontSize="11" fontWeight="800" fontFamily="Carlito, sans-serif">Tech &amp; User Audit</text>
+          <text x="59" y="108" textAnchor="middle" fill="var(--hwb-text-sub)" fontSize="8" fontFamily="'IBM Plex Mono', monospace">Stack Evaluated</text>
 
-            <rect x="0" y="19" width="62" height="12" fill="var(--hwb-panel-soft, #EAF0FB)" />
-            <text x="4" y="28" fill="var(--hwb-text-sub, #64748B)" fontSize="7" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">● TECH AUDIT</text>
+          <rect x="10" y="118" width="98" height="18" fill="var(--hwb-pill-green-bg)" stroke="#10B981" strokeWidth="0.8" />
+          <text x="59" y="130.5" textAnchor="middle" fill="var(--hwb-pill-green-text)" fontSize="8" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">✓ Scope Mapped</text>
+        </g>
 
-            <rect x="0" y="35" width="62" height="12" fill="var(--hwb-panel-soft, #EAF0FB)" />
-            <text x="4" y="44" fill="var(--hwb-text-sub, #64748B)" fontSize="7" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">● SCOPE MATRIX</text>
+        {/* Connector 1 -> 2 */}
+        <line x1="134" y1="84" x2="155" y2="84" stroke="var(--hwb-border-primary)" strokeWidth="1.5" className="hwb-anim-dash" />
+        <polygon points="155,81 161,84 155,87" fill="var(--hwb-border-primary)" />
+        <circle cx="134" cy="84" r="2.5" fill="#F09018" className="hwb-anim-packet-x1" />
+
+        {/* Card 2: 02 / STRATEGY */}
+        <g transform="translate(161, 14)">
+          <rect x="0" y="0" width="118" height="144" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <rect x="0" y="0" width="118" height="24" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <circle cx="12" cy="12" r="3" fill="#365CAD" className="hwb-anim-pulse" />
+          <text x="20" y="15.5" fill="var(--hwb-border-primary)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif" letterSpacing="0.04em">02 / STRATEGY</text>
+
+          {/* Architecture Blueprint Graphic */}
+          <g transform="translate(59, 58)">
+            <line x1="-22" y1="0" x2="22" y2="0" stroke="var(--hwb-border-subtle)" strokeWidth="1.2" />
+            <circle cx="-20" cy="0" r="6" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1" />
+            <rect x="-9" y="-9" width="18" height="18" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.2" />
+            <circle cx="0" cy="0" r="3" fill="#365CAD" className="hwb-anim-pulse" />
+            <circle cx="20" cy="0" r="6" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1" />
           </g>
+
+          <text x="59" y="94" textAnchor="middle" fill="var(--hwb-text-head)" fontSize="11" fontWeight="800" fontFamily="Carlito, sans-serif">Solution Target</text>
+          <text x="59" y="108" textAnchor="middle" fill="var(--hwb-text-sub)" fontSize="8" fontFamily="'IBM Plex Mono', monospace">Architecture Arc</text>
+
+          <rect x="10" y="118" width="98" height="18" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="0.8" />
+          <text x="59" y="130.5" textAnchor="middle" fill="var(--hwb-border-primary)" fontSize="8" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">✓ Feasibility Pass</text>
         </g>
 
-        {/* Animated Connector from Discovery Engine to Strategy Roadmap */}
-        <line x1="152" y1="55" x2="182" y2="55" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.5" className="hwb-anim-dash" />
-        <polygon points="182,52 188,55 182,58" fill="var(--hwb-border-primary, #365CAD)" />
-        <circle cx="152" cy="55" r="3" fill="#F09018" className="hwb-anim-packet-x1" />
+        {/* Connector 2 -> 3 */}
+        <line x1="279" y1="84" x2="300" y2="84" stroke="var(--hwb-border-primary)" strokeWidth="1.5" className="hwb-anim-dash" />
+        <polygon points="300,81 306,84 300,87" fill="var(--hwb-border-primary)" />
+        <circle cx="279" cy="84" r="2.5" fill="#10B981" className="hwb-anim-packet-x1" />
 
-        {/* Top-Right: Strategic Roadmap Box */}
-        <g transform="translate(188, 16)">
-          <rect x="0" y="0" width="174" height="78" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <rect x="0" y="0" width="174" height="20" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <text x="10" y="13.5" fill="var(--hwb-border-primary, #365CAD)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif" letterSpacing="0.04em">STRATEGIC ROADMAP</text>
-          <rect x="116" y="4" width="50" height="12" fill="#10B981" opacity="0.18" />
-          <text x="141" y="13" textAnchor="middle" fill="#10B981" fontSize="7.5" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">ALIGNED ✓</text>
+        {/* Card 3: 03 / ROADMAP */}
+        <g transform="translate(306, 14)">
+          <rect x="0" y="0" width="118" height="144" fill="var(--hwb-panel-bg)" stroke="#F09018" strokeWidth="1.3" />
+          <rect x="0" y="0" width="118" height="24" fill="#FFF7ED" stroke="#F09018" strokeWidth="1.3" />
+          <circle cx="12" cy="12" r="3" fill="#F09018" className="hwb-anim-pulse" />
+          <text x="20" y="15.5" fill="#C2410C" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif" letterSpacing="0.04em">03 / ROADMAP</text>
 
-          {/* Roadmap Nodes & Progress Path */}
-          <line x1="16" y1="46" x2="158" y2="46" stroke="var(--hwb-border-subtle, #CBD5E1)" strokeWidth="1.5" />
-          <line x1="16" y1="46" x2="88" y2="46" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.8" className="hwb-anim-dash-fast" />
+          {/* Timeline Nodes Graphic */}
+          <g transform="translate(59, 58)">
+            <line x1="-24" y1="0" x2="24" y2="0" stroke="var(--hwb-border-subtle)" strokeWidth="1.5" />
+            <circle cx="-20" cy="0" r="4.5" fill="#10B981" />
+            <circle cx="0" cy="0" r="5" fill="#F09018" />
+            <circle cx="0" cy="0" r="5" stroke="#F09018" strokeWidth="1" fill="none" className="hwb-anim-ping" />
+            <circle cx="20" cy="0" r="4.5" fill="var(--hwb-border-primary)" />
+          </g>
 
-          {/* Phase 1 Node */}
-          <circle cx="28" cy="46" r="4.5" fill="var(--hwb-border-primary, #365CAD)" />
-          <circle cx="28" cy="46" r="7.5" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1" className="hwb-anim-pulse" fill="none" />
-          <text x="28" y="60" textAnchor="middle" fill="var(--hwb-text-head, #0F172A)" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif">Phase 1</text>
-          <text x="28" y="69" textAnchor="middle" fill="var(--hwb-text-sub, #64748B)" fontSize="6.5" fontFamily="'IBM Plex Mono', monospace">Discovery</text>
+          <text x="59" y="94" textAnchor="middle" fill="var(--hwb-text-head)" fontSize="11" fontWeight="800" fontFamily="Carlito, sans-serif">Sprint 0 Plan</text>
+          <text x="59" y="108" textAnchor="middle" fill="var(--hwb-text-sub)" fontSize="8" fontFamily="'IBM Plex Mono', monospace">Prioritized Backlog</text>
 
-          {/* Phase 2 Node */}
-          <circle cx="88" cy="46" r="4.5" fill="#10B981" />
-          <circle cx="88" cy="46" r="7.5" stroke="#10B981" strokeWidth="1" className="hwb-anim-pulse" fill="none" />
-          <text x="88" y="60" textAnchor="middle" fill="var(--hwb-text-head, #0F172A)" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif">Phase 2</text>
-          <text x="88" y="69" textAnchor="middle" fill="#10B981" fontSize="6.5" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">Target Arc</text>
-
-          {/* Phase 3 Node */}
-          <circle cx="146" cy="46" r="4" fill="var(--hwb-border-subtle, #CBD5E1)" />
-          <text x="146" y="60" textAnchor="middle" fill="var(--hwb-text-sub, #64748B)" fontSize="8" fontWeight="700" fontFamily="Carlito, sans-serif">Phase 3</text>
-          <text x="146" y="69" textAnchor="middle" fill="var(--hwb-text-sub, #64748B)" fontSize="6.5" fontFamily="'IBM Plex Mono', monospace">Value Scale</text>
+          <rect x="10" y="118" width="98" height="18" fill="var(--hwb-pill-orange-bg)" stroke="#F09018" strokeWidth="0.8" />
+          <text x="59" y="130.5" textAnchor="middle" fill="var(--hwb-pill-orange-text)" fontSize="8" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">✓ Ready to Build</text>
         </g>
 
-        {/* Animated Connector down to Milestones */}
-        <path d="M276 94 L276 104 L190 104 L190 114" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" className="hwb-anim-dash" fill="none" />
-        <polygon points="187,114 190,120 193,114" fill="var(--hwb-border-primary, #365CAD)" />
-
-        {/* Bottom: 3 Milestone Execution Cards */}
-        {/* M1 Card */}
-        <g transform="translate(18, 114)">
-          <rect x="0" y="0" width="106" height="70" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <rect x="8" y="8" width="22" height="14" fill="#10B981" opacity="0.18" />
-          <text x="19" y="18" textAnchor="middle" fill="#10B981" fontSize="9" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">M1</text>
-          <text x="35" y="19" fill="var(--hwb-text-head, #0F172A)" fontSize="10" fontWeight="800" fontFamily="Carlito, sans-serif">Tech Audit</text>
-          <line x1="8" y1="28" x2="98" y2="28" stroke="var(--hwb-border-subtle, #CBD5E1)" strokeWidth="0.8" />
-          <text x="8" y="42" fill="var(--hwb-text-sub, #64748B)" fontSize="8" fontFamily="'IBM Plex Mono', monospace">Legacy Stack: Scoped</text>
-          <rect x="8" y="50" width="90" height="13" fill="#ECFDF5" />
-          <circle cx="15" cy="56.5" r="2.5" fill="#10B981" className="hwb-anim-pulse" />
-          <text x="22" y="60" fill="#065F46" fontSize="8" fontWeight="700" fontFamily="Carlito, sans-serif">Audit 100% Complete</text>
-        </g>
-
-        {/* Arrow M1 -> M2 */}
-        <line x1="124" y1="149" x2="136" y2="149" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.5" className="hwb-anim-dash" />
-        <polygon points="136,146 142,149 136,152" fill="var(--hwb-border-primary, #365CAD)" />
-
-        {/* M2 Card */}
-        <g transform="translate(142, 114)">
-          <rect x="0" y="0" width="106" height="70" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <rect x="8" y="8" width="22" height="14" fill="var(--hwb-border-primary, #365CAD)" opacity="0.18" />
-          <text x="19" y="18" textAnchor="middle" fill="var(--hwb-border-primary, #365CAD)" fontSize="9" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">M2</text>
-          <text x="35" y="19" fill="var(--hwb-text-head, #0F172A)" fontSize="10" fontWeight="800" fontFamily="Carlito, sans-serif">Architecture</text>
-          <line x1="8" y1="28" x2="98" y2="28" stroke="var(--hwb-border-subtle, #CBD5E1)" strokeWidth="0.8" />
-          <text x="8" y="42" fill="var(--hwb-text-sub, #64748B)" fontSize="8" fontFamily="'IBM Plex Mono', monospace">Target System: Mapped</text>
-          <rect x="8" y="50" width="90" height="13" fill="var(--hwb-panel-soft, #EAF0FB)" />
-          <circle cx="15" cy="56.5" r="2.5" fill="var(--hwb-border-primary, #365CAD)" className="hwb-anim-pulse" />
-          <text x="22" y="60" fill="var(--hwb-border-primary, #365CAD)" fontSize="8" fontWeight="700" fontFamily="Carlito, sans-serif">Scope Signed Off</text>
-        </g>
-
-        {/* Arrow M2 -> M3 */}
-        <line x1="248" y1="149" x2="260" y2="149" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.5" className="hwb-anim-dash" />
-        <polygon points="260,146 266,149 260,152" fill="var(--hwb-border-primary, #365CAD)" />
-
-        {/* M3 Card */}
-        <g transform="translate(266, 114)">
-          <rect x="0" y="0" width="96" height="70" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="#F09018" strokeWidth="1.3" />
-          <rect x="8" y="8" width="22" height="14" fill="#F09018" opacity="0.18" />
-          <text x="19" y="18" textAnchor="middle" fill="#F09018" fontSize="9" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">M3</text>
-          <text x="35" y="19" fill="var(--hwb-text-head, #0F172A)" fontSize="10" fontWeight="800" fontFamily="Carlito, sans-serif">Sprint 0</text>
-          <line x1="8" y1="28" x2="88" y2="28" stroke="var(--hwb-border-subtle, #CBD5E1)" strokeWidth="0.8" />
-          <text x="8" y="42" fill="var(--hwb-text-sub, #64748B)" fontSize="8" fontFamily="'IBM Plex Mono', monospace">Backlog: Prioritized</text>
-          <rect x="8" y="50" width="80" height="13" fill="#FFF7ED" />
-          <circle cx="15" cy="56.5" r="2.5" fill="#F09018" className="hwb-anim-pulse" />
-          <text x="22" y="60" fill="#C2410C" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif">Ready to Build</text>
+        {/* Bottom Full-Width Alignment Banner */}
+        <g transform="translate(16, 172)">
+          <rect x="0" y="0" width="408" height="34" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <circle cx="16" cy="17" r="3.5" fill="#10B981" className="hwb-anim-pulse" />
+          <text x="28" y="20.5" fill="var(--hwb-text-head)" fontSize="9" fontWeight="800" fontFamily="Carlito, sans-serif" letterSpacing="0.03em">STRATEGIC ROADMAP: 100% ALIGNED &amp; SCOPED</text>
+          <rect x="306" y="7" width="92" height="20" fill="#10B981" />
+          <text x="352" y="20" textAnchor="middle" fill="#FFFFFF" fontSize="8" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">APPROVED ✓</text>
         </g>
       </svg>
     )
@@ -152,128 +113,109 @@ const steps = [
     chips: ['UI/UX Design', 'System Architecture', 'Technical Planning', 'Prototyping'],
     systemCaption: 'DESIGN & ARCHITECTURE SYSTEM',
     renderDiagram: () => (
-      <svg viewBox="0 0 380 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="hwb-schematic-svg">
-        {/* Left: UI/UX Wireframe Screen */}
-        <g transform="translate(18, 16)">
-          <rect x="0" y="0" width="114" height="168" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          {/* Header bar */}
-          <rect x="0" y="0" width="114" height="18" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <circle cx="8" cy="9" r="2.2" fill="#EF4444" />
-          <circle cx="15" cy="9" r="2.2" fill="#F59E0B" />
-          <circle cx="22" cy="9" r="2.2" fill="#10B981" />
-          <text x="32" y="12" fill="var(--hwb-border-primary, #365CAD)" fontSize="8" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">UI Wireframe</text>
+      <svg viewBox="0 0 440 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="hwb-schematic-svg">
+        {/* Step 02: Design & Architecture System */}
+        {/* Left Column: 01 / UI DESIGN */}
+        <g transform="translate(16, 14)">
+          <rect x="0" y="0" width="118" height="144" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <rect x="0" y="0" width="118" height="24" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <circle cx="8" cy="12" r="2" fill="#EF4444" />
+          <circle cx="14" cy="12" r="2" fill="#F59E0B" />
+          <circle cx="20" cy="12" r="2" fill="#10B981" />
+          <text x="28" y="15.5" fill="var(--hwb-border-primary)" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif" letterSpacing="0.03em">UI WIREFRAME</text>
 
-          {/* Shimmering navbar & hero banner */}
-          <rect x="8" y="26" width="98" height="6" fill="var(--hwb-border-primary, #365CAD)" opacity="0.6" className="hwb-anim-shimmer" />
-          <rect x="8" y="38" width="98" height="36" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-subtle, #CBD5E1)" strokeWidth="0.8" />
-          <rect x="14" y="44" width="46" height="5" fill="var(--hwb-border-primary, #365CAD)" opacity="0.8" />
-          <rect x="14" y="53" width="70" height="4" fill="var(--hwb-border-subtle, #CBD5E1)" />
-          <rect x="14" y="61" width="36" height="7" fill="var(--hwb-border-primary, #365CAD)" />
+          {/* Wireframe Mockup */}
+          <rect x="10" y="32" width="98" height="6" fill="var(--hwb-border-primary)" opacity="0.5" className="hwb-anim-shimmer" />
+          <rect x="10" y="44" width="98" height="24" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-subtle)" strokeWidth="0.8" />
+          <rect x="16" y="50" width="46" height="4" fill="var(--hwb-border-primary)" opacity="0.8" />
+          <rect x="16" y="58" width="68" height="3" fill="var(--hwb-border-subtle)" />
 
-          {/* Component Card 1 (Interactive dashboard metric with breathing stroke) */}
-          <rect x="8" y="82" width="46" height="40" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="#F09018" strokeWidth="1.2" className="hwb-anim-breathing-stroke" />
-          <rect x="14" y="88" width="24" height="4" fill="#F09018" opacity="0.7" />
-          <line x1="14" y1="104" x2="48" y2="104" stroke="var(--hwb-border-subtle, #CBD5E1)" strokeWidth="1" strokeDasharray="2 2" />
-          <line x1="14" y1="112" x2="38" y2="100" stroke="#F09018" strokeWidth="1.5" />
-          <circle cx="38" cy="100" r="2" fill="#F09018" />
+          {/* 2 Component Cards */}
+          <rect x="10" y="74" width="46" height="36" fill="var(--hwb-panel-bg)" stroke="#F09018" strokeWidth="1" className="hwb-anim-breathing-stroke" />
+          <line x1="16" y1="98" x2="48" y2="88" stroke="#F09018" strokeWidth="1.5" />
+          <circle cx="48" cy="88" r="2" fill="#F09018" />
 
-          {/* Component Card 2 */}
-          <rect x="60" y="82" width="46" height="40" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1" />
-          <rect x="66" y="88" width="28" height="4" fill="var(--hwb-border-primary, #365CAD)" opacity="0.6" />
-          <rect x="66" y="96" width="34" height="3" fill="var(--hwb-border-subtle, #CBD5E1)" />
-          <rect x="66" y="103" width="26" height="3" fill="var(--hwb-border-subtle, #CBD5E1)" />
-          <rect x="66" y="110" width="30" height="3" fill="var(--hwb-border-subtle, #CBD5E1)" />
+          <rect x="62" y="74" width="46" height="36" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="0.9" />
+          <rect x="68" y="80" width="30" height="3" fill="var(--hwb-border-primary)" opacity="0.6" />
+          <rect x="68" y="87" width="34" height="3" fill="var(--hwb-border-subtle)" />
+          <rect x="68" y="94" width="26" height="3" fill="var(--hwb-border-subtle)" />
 
-          {/* Design System Tokens Pill */}
-          <rect x="8" y="130" width="98" height="28" fill="var(--hwb-panel-soft, #EAF0FB)" />
-          <text x="14" y="142" fill="var(--hwb-border-primary, #365CAD)" fontSize="7.5" fontWeight="800" fontFamily="Carlito, sans-serif">DESIGN TOKENS</text>
-          <circle cx="16" cy="151" r="3" fill="var(--hwb-border-primary, #365CAD)" />
-          <circle cx="26" cy="151" r="3" fill="#F09018" />
-          <circle cx="36" cy="151" r="3" fill="#10B981" />
-          <text x="46" y="153" fill="var(--hwb-text-sub, #64748B)" fontSize="7" fontFamily="'IBM Plex Mono', monospace">100% REUSABLE</text>
+          <rect x="10" y="118" width="98" height="18" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="0.8" />
+          <text x="59" y="130.5" textAnchor="middle" fill="var(--hwb-border-primary)" fontSize="8" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">Design Tokens ✓</text>
         </g>
 
-        {/* Animated Connector Pipes from Wireframe to Gateway */}
-        {/* Top Pipe */}
-        <path d="M132 60 L166 60" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.5" className="hwb-anim-dash" />
-        <polygon points="166,57 172,60 166,63" fill="var(--hwb-border-primary, #365CAD)" />
-        <circle cx="132" cy="60" r="3" fill="#10B981" className="hwb-anim-packet-x1" />
+        {/* Connectors UI -> Gateway */}
+        <line x1="134" y1="62" x2="155" y2="62" stroke="var(--hwb-border-primary)" strokeWidth="1.5" className="hwb-anim-dash" />
+        <polygon points="155,59 161,62 155,65" fill="var(--hwb-border-primary)" />
+        <circle cx="134" cy="62" r="2.5" fill="#10B981" className="hwb-anim-packet-x1" />
 
-        {/* Bottom Pipe */}
-        <path d="M132 140 L166 140" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.5" className="hwb-anim-dash" />
-        <polygon points="166,137 172,140 166,143" fill="var(--hwb-border-primary, #365CAD)" />
-        <circle cx="132" cy="140" r="3" fill="#F09018" className="hwb-anim-packet-x1" />
+        <line x1="134" y1="102" x2="155" y2="102" stroke="var(--hwb-border-primary)" strokeWidth="1.5" className="hwb-anim-dash" />
+        <polygon points="155,99 161,102 155,105" fill="var(--hwb-border-primary)" />
+        <circle cx="134" cy="102" r="2.5" fill="#F09018" className="hwb-anim-packet-x1" />
 
-        {/* Center: System Architecture & API Gateway Hub */}
-        <g transform="translate(172, 24)">
-          <rect x="0" y="0" width="94" height="152" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <rect x="0" y="0" width="94" height="18" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <text x="47" y="12" textAnchor="middle" fill="var(--hwb-border-primary, #365CAD)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif">API GATEWAY</text>
+        {/* Center Column: 02 / API GATEWAY */}
+        <g transform="translate(161, 14)">
+          <rect x="0" y="0" width="118" height="144" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <rect x="0" y="0" width="118" height="24" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <circle cx="12" cy="12" r="3" fill="var(--hwb-border-primary)" className="hwb-anim-pulse" />
+          <text x="20" y="15.5" fill="var(--hwb-border-primary)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif" letterSpacing="0.04em">02 / GATEWAY</text>
 
-          {/* Central Router Diamond with Rotating Accent */}
-          <g transform="translate(47, 56)">
-            <polygon points="0,-18 18,0 0,18 -18,0" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-            <circle cx="0" cy="0" r="24" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="0.8" strokeDasharray="3 3" className="hwb-anim-rotate-slow" fill="none" />
-            <circle cx="0" cy="0" r="4" fill="var(--hwb-border-primary, #365CAD)" className="hwb-anim-pulse" />
+          {/* Central Router Core */}
+          <g transform="translate(59, 62)">
+            <polygon points="0,-16 16,0 0,16 -16,0" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+            <circle cx="0" cy="0" r="22" stroke="var(--hwb-border-primary)" strokeWidth="0.8" strokeDasharray="3 3" className="hwb-anim-rotate-slow" fill="none" />
+            <circle cx="0" cy="0" r="3.5" fill="var(--hwb-border-primary)" className="hwb-anim-pulse" />
           </g>
-          <text x="47" y="86" textAnchor="middle" fill="var(--hwb-text-head, #0F172A)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif">ROUTER CORE</text>
-          <text x="47" y="95" textAnchor="middle" fill="var(--hwb-text-sub, #64748B)" fontSize="7" fontFamily="'IBM Plex Mono', monospace">GraphQL / REST</text>
 
-          {/* Gateway Status Indicators */}
-          <line x1="8" y1="104" x2="86" y2="104" stroke="var(--hwb-border-subtle, #CBD5E1)" strokeWidth="0.8" />
-          <rect x="8" y="110" width="78" height="14" fill="#ECFDF5" />
-          <circle cx="15" cy="117" r="2.5" fill="#10B981" className="hwb-anim-pulse" />
-          <text x="22" y="120" fill="#065F46" fontSize="7.5" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">SSL Terminated</text>
+          <text x="59" y="94" textAnchor="middle" fill="var(--hwb-text-head)" fontSize="10.5" fontWeight="800" fontFamily="Carlito, sans-serif">Router Core</text>
+          <text x="59" y="107" textAnchor="middle" fill="var(--hwb-text-sub)" fontSize="7.5" fontFamily="'IBM Plex Mono', monospace">GraphQL / REST</text>
 
-          <rect x="8" y="128" width="78" height="14" fill="var(--hwb-panel-soft, #EAF0FB)" />
-          <text x="47" y="138" textAnchor="middle" fill="var(--hwb-border-primary, #365CAD)" fontSize="7.5" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">P99 &lt; 1.4ms</text>
+          <rect x="10" y="118" width="98" height="18" fill="var(--hwb-pill-green-bg)" stroke="#10B981" strokeWidth="0.8" />
+          <text x="59" y="130.5" textAnchor="middle" fill="var(--hwb-pill-green-text)" fontSize="8" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">P99 &lt; 1.2ms ✓</text>
         </g>
 
-        {/* Connectors from Gateway to Backend Services */}
-        {/* Gateway -> Service 1 */}
-        <path d="M266 50 L296 40" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.5" className="hwb-anim-dash" />
-        <polygon points="296,37 302,40 296,43" fill="var(--hwb-border-primary, #365CAD)" />
+        {/* Connectors Gateway -> Backend */}
+        <line x1="279" y1="56" x2="300" y2="56" stroke="var(--hwb-border-primary)" strokeWidth="1.5" className="hwb-anim-dash" />
+        <polygon points="300,53 306,56 300,59" fill="var(--hwb-border-primary)" />
 
-        {/* Gateway -> Service 2 */}
-        <path d="M266 80 L296 85" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.5" className="hwb-anim-dash" />
-        <polygon points="296,82 302,85 296,88" fill="var(--hwb-border-primary, #365CAD)" />
+        <line x1="279" y1="102" x2="300" y2="102" stroke="var(--hwb-border-primary)" strokeWidth="1.5" className="hwb-anim-dash" />
+        <polygon points="300,99 306,102 300,105" fill="var(--hwb-border-primary)" />
 
-        {/* Gateway -> DB */}
-        <path d="M266 125 L296 142" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.5" className="hwb-anim-dash" />
-        <polygon points="296,139 302,142 296,145" fill="var(--hwb-border-primary, #365CAD)" />
+        {/* Right Column: 03 / SERVICES & DB */}
+        <g transform="translate(306, 14)">
+          <rect x="0" y="0" width="118" height="144" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <rect x="0" y="0" width="118" height="24" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <circle cx="12" cy="12" r="3" fill="#10B981" className="hwb-anim-pulse" />
+          <text x="20" y="15.5" fill="var(--hwb-border-primary)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif" letterSpacing="0.04em">03 / SERVICES</text>
 
-        {/* Right: Distributed Microservices & High-Availability DB */}
-        {/* Service 1: Auth & Logic Node */}
-        <g transform="translate(302, 20)">
-          <rect x="0" y="0" width="64" height="38" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.2" />
-          <circle cx="8" cy="10" r="2.5" fill="#10B981" className="hwb-anim-pulse" />
-          <text x="14" y="13" fill="var(--hwb-text-head, #0F172A)" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif">Auth Logic</text>
-          <rect x="6" y="20" width="52" height="12" fill="var(--hwb-panel-soft, #EAF0FB)" />
-          <text x="32" y="29" textAnchor="middle" fill="var(--hwb-border-primary, #365CAD)" fontSize="7" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">Microservice</text>
+          {/* Microservice 1: Auth & AI */}
+          <rect x="8" y="32" width="102" height="34" fill="var(--hwb-panel-bg)" stroke="#F09018" strokeWidth="1" />
+          <circle cx="16" cy="44" r="2.5" fill="#F09018" className="hwb-anim-pulse" />
+          <text x="24" y="47" fill="var(--hwb-text-head)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif">Auth &amp; AI Node</text>
+          <text x="16" y="59" fill="#C2410C" fontSize="7" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">Microservice</text>
+
+          {/* Database Cluster Cylinder */}
+          <g transform="translate(8, 72)">
+            <rect x="0" y="0" width="102" height="38" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="1" />
+            <ellipse cx="22" cy="12" rx="12" ry="3.5" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="0.8" />
+            <ellipse cx="22" cy="19" rx="12" ry="3.5" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="0.8" />
+            <ellipse cx="22" cy="26" rx="12" ry="3.5" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="0.8" />
+            <circle cx="13" cy="19" r="1.5" fill="#10B981" className="hwb-anim-pulse" />
+            <text x="40" y="18" fill="var(--hwb-text-head)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif">DB Cluster</text>
+            <text x="40" y="29" fill="var(--hwb-text-sub)" fontSize="7" fontFamily="'IBM Plex Mono', monospace">PostgreSQL ACID</text>
+          </g>
+
+          <rect x="10" y="118" width="98" height="18" fill="var(--hwb-pill-green-bg)" stroke="#10B981" strokeWidth="0.8" />
+          <text x="59" y="130.5" textAnchor="middle" fill="var(--hwb-pill-green-text)" fontSize="8" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">Zero-Trust Auth ✓</text>
         </g>
 
-        {/* Service 2: AI Orchestrator */}
-        <g transform="translate(302, 66)">
-          <rect x="0" y="0" width="64" height="38" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="#F09018" strokeWidth="1.2" />
-          <circle cx="8" cy="10" r="2.5" fill="#F09018" className="hwb-anim-pulse" />
-          <text x="14" y="13" fill="var(--hwb-text-head, #0F172A)" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif">AI Inference</text>
-          <rect x="6" y="20" width="52" height="12" fill="#FFF7ED" />
-          <text x="32" y="29" textAnchor="middle" fill="#C2410C" fontSize="7" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">AskJuno Core</text>
-        </g>
-
-        {/* Service 3: High-Availability Database Cylinder */}
-        <g transform="translate(302, 114)">
-          <rect x="0" y="0" width="64" height="62" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.2" />
-          <text x="32" y="12" textAnchor="middle" fill="var(--hwb-border-primary, #365CAD)" fontSize="7.5" fontWeight="800" fontFamily="Carlito, sans-serif">DATABASE CLUSTER</text>
-          {/* Cylinder discs */}
-          <ellipse cx="32" cy="22" rx="24" ry="5" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1" />
-          <ellipse cx="32" cy="34" rx="24" ry="5" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1" />
-          <ellipse cx="32" cy="46" rx="24" ry="5" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1" />
-          {/* Pulsing I/O write lights */}
-          <circle cx="16" cy="22" r="1.8" fill="#10B981" className="hwb-anim-pulse" />
-          <circle cx="16" cy="34" r="1.8" fill="#10B981" className="hwb-anim-pulse" />
-          <circle cx="16" cy="46" r="1.8" fill="#F09018" className="hwb-anim-pulse" />
-          <text x="32" y="58" textAnchor="middle" fill="var(--hwb-text-sub, #64748B)" fontSize="6.5" fontFamily="'IBM Plex Mono', monospace">ACID REPLICATED</text>
+        {/* Bottom Full-Width Banner */}
+        <g transform="translate(16, 172)">
+          <rect x="0" y="0" width="408" height="34" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <circle cx="16" cy="17" r="3.5" fill="#10B981" className="hwb-anim-pulse" />
+          <text x="28" y="20.5" fill="var(--hwb-text-head)" fontSize="9" fontWeight="800" fontFamily="Carlito, sans-serif" letterSpacing="0.03em">ARCHITECTURE: HIGH-AVAILABILITY &amp; MODULAR</text>
+          <rect x="306" y="7" width="92" height="20" fill="var(--hwb-border-primary)" />
+          <text x="352" y="20" textAnchor="middle" fill="#FFFFFF" fontSize="8" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">MODULAR ✓</text>
         </g>
       </svg>
     )
@@ -287,95 +229,86 @@ const steps = [
     chips: ['Agile Sprints', 'API Integration', 'Quality Assurance', 'Automated Testing'],
     systemCaption: 'AGILE DEVELOPMENT SYSTEM',
     renderDiagram: () => (
-      <svg viewBox="0 0 380 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="hwb-schematic-svg">
+      <svg viewBox="0 0 440 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="hwb-schematic-svg">
+        {/* Step 03: Develop (IDE + Git Flow + Testing) */}
         {/* Top-Left: Code IDE Window */}
-        <g transform="translate(18, 16)">
-          <rect x="0" y="0" width="186" height="114" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          {/* Title bar */}
-          <rect x="0" y="0" width="186" height="20" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <circle cx="10" cy="10" r="2.5" fill="#EF4444" />
-          <circle cx="18" cy="10" r="2.5" fill="#F59E0B" />
-          <circle cx="26" cy="10" r="2.5" fill="#10B981" />
-          <rect x="38" y="4" width="82" height="12" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-subtle, #CBD5E1)" strokeWidth="0.8" />
-          <text x="44" y="13" fill="var(--hwb-border-primary, #365CAD)" fontSize="7.5" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">orchestrator.ts</text>
+        <g transform="translate(16, 14)">
+          <rect x="0" y="0" width="194" height="136" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <rect x="0" y="0" width="194" height="22" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <circle cx="9" cy="11" r="2.2" fill="#EF4444" />
+          <circle cx="16" cy="11" r="2.2" fill="#F59E0B" />
+          <circle cx="23" cy="11" r="2.2" fill="#10B981" />
+          <rect x="34" y="4" width="76" height="14" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-subtle)" strokeWidth="0.8" />
+          <text x="40" y="14" fill="var(--hwb-border-primary)" fontSize="7.5" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">pipeline.ts</text>
 
-          {/* Active line highlight strip */}
-          <rect x="0" y="68" width="186" height="16" fill="var(--hwb-panel-soft, #EAF0FB)" opacity="0.6" />
+          {/* Active Line Highlight */}
+          <rect x="0" y="77" width="194" height="18" fill="var(--hwb-panel-soft)" opacity="0.5" />
 
-          {/* Code lines with syntax highlighting */}
-          <text x="10" y="38" fill="var(--hwb-text-sub, #64748B)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">1</text>
-          <text x="22" y="38" fill="var(--hwb-border-primary, #365CAD)" fontSize="8.5" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">import</text>
-          <text x="56" y="38" fill="var(--hwb-text-head, #0F172A)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">&#123; createEngine &#125;</text>
+          {/* Code Lines with Clear Syntax Formatting */}
+          <text x="10" y="42" fill="var(--hwb-text-sub)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">1</text>
+          <text x="22" y="42" fill="var(--hwb-border-primary)" fontSize="8.5" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">import</text>
+          <text x="56" y="42" fill="var(--hwb-text-head)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">&#123; createEngine &#125; from '@core';</text>
 
-          <text x="10" y="54" fill="var(--hwb-text-sub, #64748B)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">2</text>
-          <text x="22" y="54" fill="#F09018" fontSize="8.5" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">export const</text>
-          <text x="82" y="54" fill="var(--hwb-text-head, #0F172A)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">service = async () =&gt; &#123;</text>
+          <text x="10" y="60" fill="var(--hwb-text-sub)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">2</text>
+          <text x="22" y="60" fill="#F09018" fontSize="8.5" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">export const</text>
+          <text x="82" y="60" fill="var(--hwb-text-head)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">service = async () =&gt; &#123;</text>
 
-          <text x="10" y="70" fill="var(--hwb-text-sub, #64748B)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">3</text>
-          <text x="22" y="70" fill="var(--hwb-text-sub, #64748B)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">  const auth = await token();</text>
+          <text x="10" y="78" fill="var(--hwb-text-sub)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">3</text>
+          <text x="22" y="78" fill="var(--hwb-text-sub)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">  const auth = await verifyToken();</text>
 
-          <text x="10" y="86" fill="var(--hwb-text-sub, #64748B)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">4</text>
-          <text x="22" y="86" fill="#10B981" fontSize="8.5" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">  return pipeline.run(auth);</text>
-          {/* Animated Blinking Cursor */}
-          <rect x="156" y="77" width="2" height="10" fill="var(--hwb-border-primary, #365CAD)" className="hwb-anim-cursor" />
+          <text x="10" y="96" fill="var(--hwb-text-sub)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">4</text>
+          <text x="22" y="96" fill="#10B981" fontSize="8.5" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">  return pipeline.run(auth);</text>
+          <rect x="156" y="87" width="2" height="10" fill="var(--hwb-border-primary)" className="hwb-anim-cursor" />
 
-          <text x="10" y="102" fill="var(--hwb-text-sub, #64748B)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">5</text>
-          <text x="22" y="102" fill="var(--hwb-text-head, #0F172A)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">&#125;;</text>
+          <text x="10" y="114" fill="var(--hwb-text-sub)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">5</text>
+          <text x="22" y="114" fill="var(--hwb-text-head)" fontSize="8.5" fontFamily="'IBM Plex Mono', monospace">&#125;;</text>
         </g>
 
-        {/* Animated Connector to Git Flow */}
-        <line x1="204" y1="73" x2="218" y2="73" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.5" className="hwb-anim-dash" />
-        <polygon points="218,70 224,73 218,76" fill="var(--hwb-border-primary, #365CAD)" />
+        {/* Connector from IDE to Git */}
+        <line x1="210" y1="82" x2="224" y2="82" stroke="var(--hwb-border-primary)" strokeWidth="1.5" className="hwb-anim-dash" />
+        <polygon points="224,79 230,82 224,85" fill="var(--hwb-border-primary)" />
 
-        {/* Top-Right: Git Branch Flow */}
-        <g transform="translate(224, 16)">
-          <rect x="0" y="0" width="138" height="114" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <rect x="0" y="0" width="138" height="20" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <text x="10" y="13" fill="var(--hwb-border-primary, #365CAD)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif">GIT BRANCH WORKFLOW</text>
+        {/* Top-Right: Git Branch Workflow */}
+        <g transform="translate(230, 14)">
+          <rect x="0" y="0" width="194" height="136" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <rect x="0" y="0" width="194" height="22" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <text x="10" y="15" fill="var(--hwb-border-primary)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif">GIT BRANCH WORKFLOW</text>
 
-          {/* Main branch line */}
-          <line x1="14" y1="46" x2="124" y2="46" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="2" />
-          <text x="14" y="38" fill="var(--hwb-border-primary, #365CAD)" fontSize="7.5" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">main</text>
+          {/* Main Branch Line */}
+          <line x1="16" y1="52" x2="178" y2="52" stroke="var(--hwb-border-primary)" strokeWidth="2" />
+          <text x="16" y="44" fill="var(--hwb-border-primary)" fontSize="7.5" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">main</text>
+          <circle cx="30" cy="52" r="3.5" fill="var(--hwb-border-primary)" />
+          <circle cx="80" cy="52" r="3.5" fill="var(--hwb-border-primary)" />
 
-          {/* Commit nodes on main */}
-          <circle cx="24" cy="46" r="3.5" fill="var(--hwb-border-primary, #365CAD)" />
-          <circle cx="64" cy="46" r="3.5" fill="var(--hwb-border-primary, #365CAD)" />
+          {/* Feature Branch Curve */}
+          <path d="M 30 52 Q 50 82, 70 82 L 130 82 Q 150 82, 160 52" stroke="#F09018" strokeWidth="1.8" fill="none" className="hwb-anim-dash-fast" />
+          <text x="100" y="96" textAnchor="middle" fill="#F09018" fontSize="7" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">feat/core-api</text>
+          <circle cx="100" cy="82" r="3.5" fill="#F09018" />
+          <circle cx="100" cy="82" r="6" stroke="#F09018" strokeWidth="1" className="hwb-anim-pulse" fill="none" />
 
-          {/* Feature branch line */}
-          <path d="M24 46 Q 38 72, 54 72 L 96 72 Q 112 72, 118 46" stroke="#F09018" strokeWidth="1.8" fill="none" className="hwb-anim-dash-fast" />
-          <text x="56" y="84" fill="#F09018" fontSize="7" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">feat/core</text>
+          {/* Merge Node */}
+          <circle cx="160" cy="52" r="4.5" fill="#10B981" />
+          <circle cx="160" cy="52" r="4.5" stroke="#10B981" strokeWidth="1" className="hwb-anim-ping" fill="none" />
 
-          {/* Feature commit node with pulse */}
-          <circle cx="68" cy="72" r="3.5" fill="#F09018" />
-          <circle cx="68" cy="72" r="6" stroke="#F09018" strokeWidth="1" className="hwb-anim-pulse" fill="none" />
-
-          {/* Merge node with glowing ping ring */}
-          <circle cx="118" cy="46" r="4.5" fill="#10B981" />
-          <circle cx="118" cy="46" r="4.5" stroke="#10B981" strokeWidth="1" className="hwb-anim-ping" fill="none" />
-
-          {/* Branch status tag */}
-          <rect x="10" y="94" width="118" height="14" fill="#ECFDF5" />
-          <circle cx="18" cy="101" r="2.5" fill="#10B981" className="hwb-anim-pulse" />
-          <text x="25" y="104" fill="#065F46" fontSize="7.5" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">PR Approved • 0 Conflicts</text>
+          <rect x="10" y="108" width="174" height="18" fill="var(--hwb-pill-green-bg)" stroke="#10B981" strokeWidth="0.8" />
+          <text x="97" y="120.5" textAnchor="middle" fill="var(--hwb-pill-green-text)" fontSize="8" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">PR Approved • 0 Conflicts ✓</text>
         </g>
 
-        {/* Bottom: Automated Testing & QA Suite */}
-        <g transform="translate(18, 140)">
-          <rect x="0" y="0" width="344" height="46" fill="#ECFDF5" stroke="#10B981" strokeWidth="1.3" />
-          {/* Checkmark icon with pulsing green ring */}
-          <g transform="translate(18, 23)">
-            <circle cx="0" cy="0" r="11" fill="#10B981" />
-            <circle cx="0" cy="0" r="11" stroke="#10B981" strokeWidth="1" className="hwb-anim-ping" fill="none" />
-            <path d="M-4 0 L-1 3 L5 -3" stroke="#FFFFFF" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-          </g>
-          <text x="36" y="22" fill="#065F46" fontSize="11" fontWeight="800" fontFamily="Carlito, sans-serif">AUTOMATED TEST SUITE: 100% PASSING</text>
-          <text x="36" y="34" fill="#047857" fontSize="8" fontFamily="'IBM Plex Mono', monospace">CI Runner #429 • Unit, Integration &amp; End-to-End verified</text>
+        {/* Bottom: Automated Test Suite & Coverage Banner */}
+        <g transform="translate(16, 162)">
+          <rect x="0" y="0" width="408" height="44" fill="var(--hwb-pill-green-bg)" stroke="#10B981" strokeWidth="1.3" />
+          <circle cx="20" cy="22" r="11" fill="#10B981" />
+          <circle cx="20" cy="22" r="11" stroke="#10B981" strokeWidth="1" className="hwb-anim-ping" fill="none" />
+          <path d="M16 22 L19 25 L25 19" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
 
-          {/* Test progress meter */}
-          <g transform="translate(242, 14)">
-            <rect x="0" y="0" width="92" height="6" fill="#A7F3D0" />
-            <rect x="0" y="0" width="92" height="6" fill="#10B981" className="hwb-anim-shimmer" />
-            <text x="92" y="18" textAnchor="end" fill="#047857" fontSize="8" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">COVERAGE: 99.4%</text>
+          <text x="38" y="18" fill="var(--hwb-pill-green-text)" fontSize="10.5" fontWeight="800" fontFamily="Carlito, sans-serif">AUTOMATED TEST SUITE: 100% PASSING</text>
+          <text x="38" y="32" fill="var(--hwb-text-sub)" fontSize="8" fontFamily="'IBM Plex Mono', monospace">Unit, Integration &amp; E2E Verified • CI Runner #429</text>
+
+          {/* Test Coverage Bar */}
+          <g transform="translate(290, 14)">
+            <rect x="0" y="0" width="108" height="6" fill="#A7F3D0" />
+            <rect x="0" y="0" width="106" height="6" fill="#10B981" className="hwb-anim-shimmer" />
+            <text x="108" y="18" textAnchor="end" fill="var(--hwb-pill-green-text)" fontSize="8" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">COVERAGE: 99.4%</text>
           </g>
         </g>
       </svg>
@@ -390,100 +323,100 @@ const steps = [
     chips: ['Cloud Deployment', 'Performance Tuning', 'Security Audit', 'Go-Live Support'],
     systemCaption: 'DEPLOYMENT & SECURITY PIPELINE',
     renderDiagram: () => (
-      <svg viewBox="0 0 380 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="hwb-schematic-svg">
-        {/* Top: 3-Stage CI/CD Deployment Pipeline */}
+      <svg viewBox="0 0 440 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="hwb-schematic-svg">
+        {/* Step 04: Deploy (CI/CD Pipeline + Kubernetes Production) */}
         {/* Stage 1: Build */}
-        <g transform="translate(18, 16)">
-          <rect x="0" y="0" width="96" height="66" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <rect x="0" y="0" width="96" height="18" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <text x="8" y="12" fill="var(--hwb-border-primary, #365CAD)" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif">01 / BUILD</text>
-          <rect x="68" y="4" width="22" height="10" fill="#10B981" opacity="0.2" />
-          <text x="79" y="11.5" textAnchor="middle" fill="#10B981" fontSize="7" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">DONE</text>
+        <g transform="translate(16, 14)">
+          <rect x="0" y="0" width="118" height="80" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <rect x="0" y="0" width="118" height="22" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <text x="10" y="14.5" fill="var(--hwb-border-primary)" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif">01 / BUILD</text>
+          <rect x="84" y="4" width="26" height="14" fill="#10B981" opacity="0.2" />
+          <text x="97" y="13.5" textAnchor="middle" fill="#10B981" fontSize="7" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">PASS</text>
 
-          <text x="48" y="36" textAnchor="middle" fill="var(--hwb-text-head, #0F172A)" fontSize="10" fontWeight="800" fontFamily="Carlito, sans-serif">Artifact Compiled</text>
-          <text x="48" y="48" textAnchor="middle" fill="var(--hwb-text-sub, #64748B)" fontSize="7.5" fontFamily="'IBM Plex Mono', monospace">Docker: v2.4.0</text>
-          <circle cx="48" cy="56" r="3" fill="#10B981" className="hwb-anim-pulse" />
+          <text x="59" y="42" textAnchor="middle" fill="var(--hwb-text-head)" fontSize="10" fontWeight="800" fontFamily="Carlito, sans-serif">Container Image</text>
+          <text x="59" y="55" textAnchor="middle" fill="var(--hwb-text-sub)" fontSize="7.5" fontFamily="'IBM Plex Mono', monospace">Docker: v2.4.0</text>
+
+          <rect x="10" y="61" width="98" height="14" fill="var(--hwb-pill-green-bg)" />
+          <text x="59" y="71" textAnchor="middle" fill="var(--hwb-pill-green-text)" fontSize="7" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">Artifact Ready ✓</text>
         </g>
 
-        {/* Animated Connector 1 -> 2 */}
-        <line x1="114" y1="49" x2="134" y2="49" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.5" className="hwb-anim-dash" />
-        <polygon points="134,46 140,49 134,52" fill="var(--hwb-border-primary, #365CAD)" />
-        <circle cx="114" cy="49" r="2.8" fill="#10B981" className="hwb-anim-packet-x1" />
+        {/* Connector 1 -> 2 */}
+        <line x1="134" y1="54" x2="155" y2="54" stroke="var(--hwb-border-primary)" strokeWidth="1.5" className="hwb-anim-dash" />
+        <polygon points="155,51 161,54 155,57" fill="var(--hwb-border-primary)" />
+        <circle cx="134" cy="54" r="2.5" fill="#10B981" className="hwb-anim-packet-x1" />
 
-        {/* Stage 2: Security Scan with Scanning Radar Shield */}
-        <g transform="translate(140, 16)">
-          <rect x="0" y="0" width="104" height="66" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <rect x="0" y="0" width="104" height="18" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <text x="8" y="12" fill="var(--hwb-border-primary, #365CAD)" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif">02 / SEC AUDIT</text>
-          <rect x="72" y="4" width="26" height="10" fill="#10B981" opacity="0.2" />
-          <text x="85" y="11.5" textAnchor="middle" fill="#10B981" fontSize="7" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">0 CVE</text>
+        {/* Stage 2: Security Audit */}
+        <g transform="translate(161, 14)">
+          <rect x="0" y="0" width="118" height="80" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <rect x="0" y="0" width="118" height="22" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <text x="10" y="14.5" fill="var(--hwb-border-primary)" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif">02 / SEC AUDIT</text>
+          <rect x="80" y="4" width="30" height="14" fill="#10B981" opacity="0.2" />
+          <text x="95" y="13.5" textAnchor="middle" fill="#10B981" fontSize="7" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">0 CVE</text>
 
-          <g transform="translate(24, 42)">
-            {/* Shield polygon */}
-            <path d="M0 -10 L9 -6 L9 2 Q 0 10, 0 10 Q 0 10, -9 2 L -9 -6 Z" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="#10B981" strokeWidth="1.2" />
-            <circle cx="0" cy="0" r="11" stroke="#10B981" strokeWidth="0.8" strokeDasharray="3 3" className="hwb-anim-rotate-fast" fill="none" />
-            <circle cx="0" cy="0" r="2.5" fill="#10B981" />
-          </g>
+          <text x="59" y="42" textAnchor="middle" fill="var(--hwb-text-head)" fontSize="10" fontWeight="800" fontFamily="Carlito, sans-serif">SAST &amp; DAST</text>
+          <text x="59" y="55" textAnchor="middle" fill="var(--hwb-text-sub)" fontSize="7.5" fontFamily="'IBM Plex Mono', monospace">Policy Validated</text>
 
-          <text x="44" y="38" fill="var(--hwb-text-head, #0F172A)" fontSize="9.5" fontWeight="800" fontFamily="Carlito, sans-serif">SAST &amp; DAST</text>
-          <text x="44" y="50" fill="#10B981" fontSize="8" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">Pass: 0 Vulns</text>
+          <rect x="10" y="61" width="98" height="14" fill="var(--hwb-pill-green-bg)" />
+          <text x="59" y="71" textAnchor="middle" fill="var(--hwb-pill-green-text)" fontSize="7" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">0 Vulnerabilities ✓</text>
         </g>
 
-        {/* Animated Connector 2 -> 3 */}
-        <line x1="244" y1="49" x2="264" y2="49" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.5" className="hwb-anim-dash" />
-        <polygon points="264,46 270,49 264,52" fill="var(--hwb-border-primary, #365CAD)" />
-        <circle cx="244" cy="49" r="2.8" fill="#F09018" className="hwb-anim-packet-x1" />
+        {/* Connector 2 -> 3 */}
+        <line x1="279" y1="54" x2="300" y2="54" stroke="var(--hwb-border-primary)" strokeWidth="1.5" className="hwb-anim-dash" />
+        <polygon points="300,51 306,54 300,57" fill="var(--hwb-border-primary)" />
+        <circle cx="279" cy="54" r="2.5" fill="#F09018" className="hwb-anim-packet-x1" />
 
-        {/* Stage 3: Zero-Downtime Rollout */}
-        <g transform="translate(270, 16)">
-          <rect x="0" y="0" width="92" height="66" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <rect x="0" y="0" width="92" height="18" fill="var(--hwb-border-primary, #365CAD)" />
-          <text x="46" y="12" textAnchor="middle" fill="#FFFFFF" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif">03 / ROLLOUT</text>
+        {/* Stage 3: Rollout */}
+        <g transform="translate(306, 14)">
+          <rect x="0" y="0" width="118" height="80" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <rect x="0" y="0" width="118" height="22" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <text x="10" y="14.5" fill="var(--hwb-border-primary)" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif">03 / ROLLOUT</text>
+          <rect x="80" y="4" width="30" height="14" fill="#10B981" opacity="0.2" />
+          <text x="95" y="13.5" textAnchor="middle" fill="#10B981" fontSize="7" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">LIVE</text>
 
-          <text x="46" y="36" textAnchor="middle" fill="var(--hwb-border-primary, #365CAD)" fontSize="10" fontWeight="800" fontFamily="Carlito, sans-serif">Zero-Downtime</text>
-          <text x="46" y="48" textAnchor="middle" fill="#10B981" fontSize="8" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">Rolling Pods</text>
-          <circle cx="46" cy="56" r="3" fill="#10B981" className="hwb-anim-pulse" />
+          <text x="59" y="42" textAnchor="middle" fill="var(--hwb-text-head)" fontSize="10" fontWeight="800" fontFamily="Carlito, sans-serif">Zero-Downtime</text>
+          <text x="59" y="55" textAnchor="middle" fill="var(--hwb-text-sub)" fontSize="7.5" fontFamily="'IBM Plex Mono', monospace">Canary Deployment</text>
+
+          <rect x="10" y="61" width="98" height="14" fill="var(--hwb-panel-soft)" />
+          <text x="59" y="71" textAnchor="middle" fill="var(--hwb-border-primary)" fontSize="7" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">100% Traffic Swapped ✓</text>
         </g>
 
-        {/* Bottom: Production Kubernetes Cluster & Live Telemetry Gauge */}
-        <g transform="translate(18, 94)">
-          <rect x="0" y="0" width="344" height="92" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          {/* Header */}
-          <rect x="0" y="0" width="344" height="20" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <circle cx="12" cy="10" r="3" fill="#10B981" className="hwb-anim-pulse" />
-          <text x="20" y="13.5" fill="var(--hwb-border-primary, #365CAD)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif">PRODUCTION KUBERNETES CLUSTER</text>
-          <rect x="274" y="4" width="62" height="12" fill="#ECFDF5" />
-          <text x="305" y="12.5" textAnchor="middle" fill="#065F46" fontSize="7.5" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">PROD ACTIVE</text>
+        {/* Bottom: Production Kubernetes Cluster */}
+        <g transform="translate(16, 106)">
+          <rect x="0" y="0" width="408" height="100" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <rect x="0" y="0" width="408" height="22" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <circle cx="12" cy="11" r="3" fill="#10B981" className="hwb-anim-pulse" />
+          <text x="20" y="14.5" fill="var(--hwb-border-primary)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif">PRODUCTION KUBERNETES CLUSTER (AWS MULTI-AZ)</text>
+          <rect x="334" y="4" width="66" height="14" fill="var(--hwb-pill-green-bg)" />
+          <text x="367" y="13.5" textAnchor="middle" fill="var(--hwb-pill-green-text)" fontSize="7.5" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">ACTIVE ✓</text>
 
-          {/* Left Cluster Info */}
-          <g transform="translate(12, 32)">
-            <text x="0" y="10" fill="var(--hwb-text-head, #0F172A)" fontSize="9" fontWeight="800" fontFamily="Carlito, sans-serif">Cluster: AWS us-east-1 (Multi-AZ)</text>
-            <text x="0" y="24" fill="var(--hwb-text-sub, #64748B)" fontSize="8" fontFamily="'IBM Plex Mono', monospace">Orchestrator: K8s v1.30 • Auto-healing: Enabled</text>
+          {/* Left Cluster Info & 4 Pods */}
+          <g transform="translate(12, 30)">
+            <text x="0" y="9" fill="var(--hwb-text-sub)" fontSize="8" fontFamily="'IBM Plex Mono', monospace">Orchestrator: K8s v1.30 • Auto-Healing: Enabled</text>
 
-            {/* 4 Pods visualization */}
-            <g transform="translate(0, 32)">
+            <g transform="translate(0, 18)">
               {[
-                { name: 'Pod-1', x: 0 },
-                { name: 'Pod-2', x: 38 },
-                { name: 'Pod-3', x: 76 },
-                { name: 'Pod-4', x: 114 },
+                { name: 'Pod-01', x: 0 },
+                { name: 'Pod-02', x: 68 },
+                { name: 'Pod-03', x: 136 },
+                { name: 'Pod-04', x: 204 },
               ].map(pod => (
                 <g key={pod.name} transform={`translate(${pod.x}, 0)`}>
-                  <rect x="0" y="0" width="34" height="18" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1" />
-                  <circle cx="6" cy="9" r="2" fill="#10B981" className="hwb-anim-pulse" />
-                  <text x="12" y="12" fill="var(--hwb-border-primary, #365CAD)" fontSize="7" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">{pod.name}</text>
+                  <rect x="0" y="0" width="60" height="22" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1" />
+                  <circle cx="9" cy="11" r="2.2" fill="#10B981" className="hwb-anim-pulse" />
+                  <text x="16" y="14" fill="var(--hwb-border-primary)" fontSize="7.5" fontWeight="700" fontFamily="'IBM Plex Mono', monospace">{pod.name}</text>
                 </g>
               ))}
             </g>
+
+            <text x="0" y="56" fill="var(--hwb-text-sub)" fontSize="7.5" fontFamily="'IBM Plex Mono', monospace">Nodes Healthy: 4/4 • P99: 12ms</text>
           </g>
 
-          {/* Right SLA Uptime Dial / Gauge Badge */}
-          <g transform="translate(254, 28)">
-            <rect x="0" y="0" width="82" height="56" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="#10B981" strokeWidth="1.3" />
-            <circle cx="41" cy="22" r="16" stroke="var(--hwb-border-subtle, #CBD5E1)" strokeWidth="2.5" fill="none" />
-            <circle cx="41" cy="22" r="16" stroke="#10B981" strokeWidth="2.5" strokeDasharray="90 30" className="hwb-anim-rotate" fill="none" />
-            <text x="41" y="25" textAnchor="middle" fill="var(--hwb-text-head, #0F172A)" fontSize="10" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">99.9%</text>
-            <text x="41" y="46" textAnchor="middle" fill="#047857" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif">UPTIME SLA</text>
+          {/* Right SLA Dial Box */}
+          <g transform="translate(296, 30)">
+            <rect x="0" y="0" width="102" height="60" fill="var(--hwb-panel-soft)" stroke="#10B981" strokeWidth="1" />
+            <text x="51" y="24" textAnchor="middle" fill="var(--hwb-text-head)" fontSize="16" fontWeight="800" fontFamily="Carlito, sans-serif">99.9%</text>
+            <text x="51" y="38" textAnchor="middle" fill="#047857" fontSize="8" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">UPTIME SLA</text>
+            <text x="51" y="50" textAnchor="middle" fill="var(--hwb-text-sub)" fontSize="7" fontFamily="'IBM Plex Mono', monospace">Multi-Region Live</text>
           </g>
         </g>
       </svg>
@@ -498,95 +431,88 @@ const steps = [
     chips: ['SLA Monitoring', 'Feature Expansion', 'System Scaling', 'Continuous Innovation'],
     systemCaption: 'CONTINUOUS SCALE & SLA SYSTEM',
     renderDiagram: () => (
-      <svg viewBox="0 0 380 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="hwb-schematic-svg">
+      <svg viewBox="0 0 440 220" fill="none" xmlns="http://www.w3.org/2000/svg" className="hwb-schematic-svg">
         <defs>
           <linearGradient id="hwb-scale-grad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#365CAD" stopOpacity="0.45" />
+            <stop offset="0%" stopColor="#365CAD" stopOpacity="0.35" />
             <stop offset="100%" stopColor="#365CAD" stopOpacity="0.02" />
           </linearGradient>
-          <clipPath id="hwb-wave-clip">
-            <rect x="0" y="22" width="344" height="78" />
+          <clipPath id="hwb-wave-clip-new">
+            <rect x="0" y="22" width="408" height="88" />
           </clipPath>
         </defs>
 
         {/* Top: 3 Metric Cards */}
         {/* Card 1: Uptime SLA */}
-        <g transform="translate(18, 16)">
-          <rect x="0" y="0" width="106" height="58" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <circle cx="10" cy="12" r="2.5" fill="#10B981" className="hwb-anim-pulse" />
-          <text x="18" y="15" fill="var(--hwb-text-sub, #64748B)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif">UPTIME SLA</text>
-          <text x="10" y="38" fill="#10B981" fontSize="18" fontWeight="800" fontFamily="Carlito, sans-serif">99.99%</text>
-          <rect x="10" y="44" width="86" height="8" fill="#ECFDF5" />
-          <text x="53" y="50" textAnchor="middle" fill="#065F46" fontSize="6.5" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">ZERO REGRESSION</text>
+        <g transform="translate(16, 14)">
+          <rect x="0" y="0" width="118" height="68" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <circle cx="12" cy="14" r="2.5" fill="#10B981" className="hwb-anim-pulse" />
+          <text x="20" y="17" fill="var(--hwb-text-sub)" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif">UPTIME SLA</text>
+          <text x="12" y="42" fill="#10B981" fontSize="18" fontWeight="800" fontFamily="Carlito, sans-serif">99.99%</text>
+          <rect x="10" y="48" width="98" height="13" fill="var(--hwb-pill-green-bg)" />
+          <text x="59" y="57" textAnchor="middle" fill="var(--hwb-pill-green-text)" fontSize="6.5" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">ZERO REGRESSION</text>
         </g>
 
         {/* Card 2: Latency */}
-        <g transform="translate(136, 16)">
-          <rect x="0" y="0" width="108" height="58" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <circle cx="10" cy="12" r="2.5" fill="var(--hwb-border-primary, #365CAD)" className="hwb-anim-pulse" />
-          <text x="18" y="15" fill="var(--hwb-text-sub, #64748B)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif">GLOBAL LATENCY</text>
-          <text x="10" y="38" fill="var(--hwb-border-primary, #365CAD)" fontSize="18" fontWeight="800" fontFamily="Carlito, sans-serif">&lt; 28ms</text>
-          <rect x="10" y="44" width="88" height="8" fill="var(--hwb-panel-soft, #EAF0FB)" />
-          <text x="54" y="50" textAnchor="middle" fill="var(--hwb-border-primary, #365CAD)" fontSize="6.5" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">EDGE ACCELERATED</text>
+        <g transform="translate(161, 14)">
+          <rect x="0" y="0" width="118" height="68" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <circle cx="12" cy="14" r="2.5" fill="var(--hwb-border-primary)" className="hwb-anim-pulse" />
+          <text x="20" y="17" fill="var(--hwb-text-sub)" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif">GLOBAL LATENCY</text>
+          <text x="12" y="42" fill="var(--hwb-border-primary)" fontSize="18" fontWeight="800" fontFamily="Carlito, sans-serif">&lt; 24ms</text>
+          <rect x="10" y="48" width="98" height="13" fill="var(--hwb-panel-soft)" />
+          <text x="59" y="57" textAnchor="middle" fill="var(--hwb-border-primary)" fontSize="6.5" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">EDGE ACCELERATED</text>
         </g>
 
-        {/* Card 3: Auto-Scaled Nodes */}
-        <g transform="translate(256, 16)">
-          <rect x="0" y="0" width="106" height="58" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="#F09018" strokeWidth="1.3" />
-          <circle cx="10" cy="12" r="2.5" fill="#F09018" className="hwb-anim-pulse" />
-          <text x="18" y="15" fill="var(--hwb-text-sub, #64748B)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif">ACTIVE NODES</text>
-          <text x="10" y="38" fill="var(--hwb-text-head, #0F172A)" fontSize="18" fontWeight="800" fontFamily="Carlito, sans-serif">16 / 16</text>
-          <rect x="10" y="44" width="86" height="8" fill="#FFF7ED" />
-          <text x="53" y="50" textAnchor="middle" fill="#C2410C" fontSize="6.5" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">+8 AUTO-SCALED</text>
+        {/* Card 3: Active Nodes */}
+        <g transform="translate(306, 14)">
+          <rect x="0" y="0" width="118" height="68" fill="var(--hwb-panel-bg)" stroke="#F09018" strokeWidth="1.3" />
+          <circle cx="12" cy="14" r="2.5" fill="#F09018" className="hwb-anim-pulse" />
+          <text x="20" y="17" fill="var(--hwb-text-sub)" fontSize="8" fontWeight="800" fontFamily="Carlito, sans-serif">ACTIVE NODES</text>
+          <text x="12" y="42" fill="var(--hwb-text-head)" fontSize="18" fontWeight="800" fontFamily="Carlito, sans-serif">16 / 16</text>
+          <rect x="10" y="48" width="98" height="13" fill="var(--hwb-pill-orange-bg)" />
+          <text x="59" y="57" textAnchor="middle" fill="var(--hwb-pill-orange-text)" fontSize="6.5" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">+8 AUTO-SCALED</text>
         </g>
 
         {/* Bottom: Real-Time Telemetry & Auto-Scale Wave Graph */}
-        <g transform="translate(18, 84)">
-          <rect x="0" y="0" width="344" height="102" fill="var(--hwb-panel-bg, #FFFFFF)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          {/* Header */}
-          <rect x="0" y="0" width="344" height="20" fill="var(--hwb-panel-soft, #EAF0FB)" stroke="var(--hwb-border-primary, #365CAD)" strokeWidth="1.3" />
-          <circle cx="10" cy="10" r="3" fill="#10B981" className="hwb-anim-pulse" />
-          <text x="18" y="13.5" fill="var(--hwb-border-primary, #365CAD)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif">REAL-TIME TELEMETRY &amp; AUTO-SCALE CURVE</text>
-          <rect x="260" y="4" width="76" height="12" fill="#ECFDF5" />
-          <text x="298" y="12.5" textAnchor="middle" fill="#065F46" fontSize="7.5" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">STREAM: 60 FPS</text>
+        <g transform="translate(16, 94)">
+          <rect x="0" y="0" width="408" height="112" fill="var(--hwb-panel-bg)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <rect x="0" y="0" width="408" height="22" fill="var(--hwb-panel-soft)" stroke="var(--hwb-border-primary)" strokeWidth="1.3" />
+          <circle cx="12" cy="11" r="3" fill="#10B981" className="hwb-anim-pulse" />
+          <text x="20" y="14.5" fill="var(--hwb-border-primary)" fontSize="8.5" fontWeight="800" fontFamily="Carlito, sans-serif">REAL-TIME TELEMETRY &amp; AUTO-SCALE CURVE</text>
+          <rect x="318" y="4" width="82" height="14" fill="var(--hwb-pill-green-bg)" />
+          <text x="359" y="13.5" textAnchor="middle" fill="var(--hwb-pill-green-text)" fontSize="7.5" fontWeight="800" fontFamily="'IBM Plex Mono', monospace">STREAM: 60 FPS</text>
 
           {/* Grid lines */}
-          <line x1="10" y1="42" x2="334" y2="42" stroke="var(--hwb-border-subtle, #CBD5E1)" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.6" />
-          <line x1="10" y1="62" x2="334" y2="62" stroke="var(--hwb-border-subtle, #CBD5E1)" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.6" />
-          <line x1="10" y1="82" x2="334" y2="82" stroke="var(--hwb-border-subtle, #CBD5E1)" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.6" />
+          <line x1="12" y1="42" x2="396" y2="42" stroke="var(--hwb-border-subtle)" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.6" />
+          <line x1="12" y1="62" x2="396" y2="62" stroke="var(--hwb-border-subtle)" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.6" />
+          <line x1="12" y1="82" x2="396" y2="82" stroke="var(--hwb-border-subtle)" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.6" />
 
-          {/* Flowing Telemetry Wave Curve inside clipped area */}
-          <g clipPath="url(#hwb-wave-clip)">
-            {/* Wave curve with soft gradient fill */}
+          {/* Telemetry Wave Curve inside clipped area */}
+          <g clipPath="url(#hwb-wave-clip-new)">
             <path
-              d="M10 88 Q 50 84, 85 76 T 160 62 T 235 40 T 290 56 T 334 78 L 334 98 L 10 98 Z"
+              d="M 12 84 Q 70 80, 120 70 T 200 58 T 280 48 T 340 60 T 396 76 L 396 90 L 12 90 Z"
               fill="url(#hwb-scale-grad)"
             />
             <path
-              d="M10 88 Q 50 84, 85 76 T 160 62 T 235 40 T 290 56 T 334 78"
-              stroke="var(--hwb-border-primary, #365CAD)"
-              strokeWidth="2.4"
+              d="M 12 84 Q 70 80, 120 70 T 200 58 T 280 48 T 340 60 T 396 76"
+              stroke="var(--hwb-border-primary)"
+              strokeWidth="2.2"
               fill="none"
               className="hwb-anim-dash"
             />
-            {/* Moving scanning telemetry vertical line */}
-            <line x1="15" y1="24" x2="15" y2="98" stroke="#10B981" strokeWidth="1.2" opacity="0.8" className="hwb-anim-scan-telemetry" />
+            <line x1="12" y1="24" x2="12" y2="90" stroke="#10B981" strokeWidth="1.2" opacity="0.8" className="hwb-anim-scan-telemetry" />
           </g>
 
           {/* Peak Auto-Scale Beacon Tag */}
-          <g transform="translate(195, 26)">
-            {/* Tag badge */}
-            <rect x="0" y="0" width="82" height="15" fill="#F09018" />
-            <text x="41" y="10.5" textAnchor="middle" fill="#FFFFFF" fontSize="7.5" fontWeight="800" fontFamily="Carlito, sans-serif">PEAK: +8 PODS</text>
-            {/* Target line down to peak curve */}
-            <line x1="41" y1="15" x2="41" y2="28" stroke="#F09018" strokeWidth="1.2" strokeDasharray="2 2" />
-            {/* Glowing Beacon point */}
-            <circle cx="41" cy="28" r="3.5" fill="#F09018" />
-            <circle cx="41" cy="28" r="3.5" stroke="#F09018" strokeWidth="1" className="hwb-anim-ping" fill="none" />
+          <g transform="translate(238, 24)">
+            <rect x="0" y="0" width="84" height="14" fill="#F09018" rx="2" />
+            <text x="42" y="10" textAnchor="middle" fill="#FFFFFF" fontSize="7.5" fontWeight="800" fontFamily="Carlito, sans-serif">PEAK: +8 PODS</text>
+            <line x1="42" y1="14" x2="42" y2="24" stroke="#F09018" strokeWidth="1" strokeDasharray="2 2" />
+            <circle cx="42" cy="24" r="3" fill="#F09018" />
+            <circle cx="42" cy="24" r="3" stroke="#F09018" strokeWidth="1" className="hwb-anim-ping" fill="none" />
           </g>
 
-          {/* Bottom Live Throughput Tag */}
-          <text x="12" y="94" fill="var(--hwb-text-sub, #64748B)" fontSize="7.5" fontFamily="'IBM Plex Mono', monospace">Throughput: 84.6k req/s • Load Balanced: 100%</text>
+          <text x="14" y="101" fill="var(--hwb-text-sub)" fontSize="7.5" fontFamily="'IBM Plex Mono', monospace">Throughput: 85.2k req/s • P99: 14ms • Auto-Heal: 100% Active</text>
         </g>
       </svg>
     )
